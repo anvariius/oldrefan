@@ -1,0 +1,2112 @@
+@font-face {
+	font-family: "Arial Narrow";
+	src: url(../fonts/arial-narrow.ttf);
+}
+@font-face {
+	font-family: Dosis;
+	src: url(../fonts/dosis.ttf);
+}
+@font-face {
+	font-family: "Montserrat - Extra Bold";
+	src: url(../fonts/Montserrat-ExtraBold.ttf);
+}
+@font-face {
+	font-family: Montserrat;
+	src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+	font-family: Montserrat-Reg;
+	src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+	font-family: "Montserrat - Semi Bold";
+	src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+button, button:active, button:focus, input, input:active, input:focus {
+   	outline: 0!important;
+	outline-color: transparent!important;
+	outline-width: 0!important;
+	outline-style: none!important;
+	box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+}
+button::-moz-focus-inner {
+  border: 0 !important;
+}
+button,.delete-product,.refresh-product{
+	cursor: pointer;
+}
+input {
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    -o-user-select: auto !important;
+    user-select: auto !important;  
+}
+
+.assortt{
+	border: 2px solid #edbe3c; 
+	padding: 10px;
+}
+.assortt h4{
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 26px;
+}
+.assortt a{
+	text-align: center;
+	display: block;
+	font-family: Montserrat;
+	font-weight: bold;
+	font-size: 30px;
+	margin: 0 auto;
+	color: #f3bc42;
+}
+
+.wrap{
+	padding: 0 37px;
+}
+.wrap1{
+	width: 70%;
+	margin: 0 auto;
+}
+.flex{
+	display: flex;
+}
+.podsvetka{
+	text-shadow: 0 -1px rgba(0,0,0,.1);
+ 	-webkit-animation: pulsate 1.2s linear infinite;
+  	animation: pulsate 1.2s linear infinite;
+}
+@-webkit-keyframes pulsate {
+ 50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+}
+@keyframes pulsate {
+ 50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+}
+.redborder{
+	border-color: red;
+}
+body{
+	background-color: #000;
+}
+#omniva_container1 img{
+	display: none;
+}
+#omniva_container1 label{
+	display: none;
+}
+#omniva_container2 img{
+	display: none;
+}
+#omniva_container2 label{
+	display: none;
+}
+#omniva_container3 img{
+	display: none;
+}
+#omniva_container3 label{
+	display: none;
+}
+
+.hat{
+	padding: 20px 0;
+	background-color: #000;
+}
+.one-click .form-check-input{
+	margin-top: -1px;
+}
+.hat ul{
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.hat ul li{
+	margin-left: 28px;
+}
+.hat ul li:first-child{
+	margin-left: 0;
+}
+.hat a{
+	color: #ffffff;
+	font-family: "Arial Narrow";
+	font-size: 12px;
+	font-weight: 400;
+	text-transform: uppercase;
+	/* Text style for "2, 50 244" */
+	letter-spacing: 0.23px;
+}
+.hat a:hover{
+	color: #edbe3c;
+	text-decoration: none;
+}
+.hat a img{
+	height: 13px;
+	width: auto;
+	margin-right: 7px;
+	margin-bottom: 3px;
+}
+.hat a i{
+	margin-right: 5px;
+	font-size: 15px;
+}
+.translated{
+	float: left;
+    position: absolute;
+    margin-left: 0 !important;
+
+    left: 80%;
+}
+.translated img{
+	height: 32px !important;
+	width: 32px !important;
+}
+.assort-link{
+	font-family: "Montserrat";
+	text-decoration: underline;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #000;
+	margin-top: -20px;
+	display: block;
+}
+.assort-link img{
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+.assort-link:hover{
+	text-decoration: none;
+	color: #000;
+}
+header{
+	padding: 30px 0;
+	background-color: #000;
+}
+header .logo{
+	margin: 0 auto;
+	height: 58px;
+	display: block;
+}
+header .icon-block{
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+header .icon-block .img-wrap{
+	height: 50px;
+}
+header .icon-block a{
+	color: #fff;
+}
+header .icon-block a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+header .icon-block b.numofbasket{
+	color: #f7f6f6;
+	font-family: Dosis;
+	font-size: 50px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 37px;
+	text-align: center;
+	display: block;
+}
+header .icon-block span{
+	color: #ffffff;
+	font-family: "Arial Narrow";
+	font-size: 15px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+header .icon-block img{
+	display: block;
+	width: 45px;
+	margin: 0 auto;
+}
+
+header .icon-block .contact-icon{
+	width: 40px;
+}
+header .right-icons{
+	justify-content: flex-end;
+}
+header .mr30{
+	margin-right: 50px;
+}
+header .ml30{
+	margin-left: 30px;
+}
+
+
+.line-opacity{
+	height: 1px;
+	background-color: #848484;
+	width: 100%;
+}
+.novinka{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	margin: 0 auto;
+	background-color: #edbe3c;
+	height: 30px;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 16px;
+	font-family: Montserrat;
+	text-align: center;
+}
+.rasprodano{
+	color: #fff;
+	background-color: #dc3545;
+	height: 23px;
+	border-radius: 5px;
+	font-family: Montserrat-Reg;
+	font-size: 14px;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.iconss{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100%;
+}
+.iconss .novinka{
+	width: 100px;
+	margin: 0;
+	margin-left: 20px;
+	border-radius: 5px;
+	height: 30px;
+
+}
+.iconss .rasprodano{
+	width: 100px;
+	border-radius: 5px;
+	height: 30px;
+}
+.product-card{
+	cursor: pointer;
+}
+.top-block{
+	display: flex;
+	justify-content: space-between;
+}
+nav{
+	background-color: #000;
+	padding: 30px 0 26px;
+}
+nav ul{
+	justify-content: center;
+}
+nav a{
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.25px;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+nav a:hover{
+	text-decoration: none;
+	color: #edbe3c;
+}
+nav a i{
+	font-size: 20px !important;
+    margin-right: 5px;
+}
+
+.sale-line{
+	background-color: #edbe3c;
+	padding: 25px 0;
+}
+.sale-line a{
+	color: red;
+}
+.sale-line a:hover{
+	color: red;
+}
+.sale-line h3{
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 21px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	text-align: center;
+}
+.sale-line h3 span{
+	color: #000;
+}
+
+
+main{
+	padding-top: 35px;
+	padding-bottom: 35px;
+	background-image: url(../img/main-bg.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: #000;
+}
+main .catalog{
+	background-color: #fff;
+	margin: 0 auto;
+	width: 80%;
+}
+
+
+.advantages{
+	padding: 36px 0 6px;
+	background-color: #000;
+}
+.advantages h4:hover{
+	color: #edbe3c;
+	cursor: pointer;
+}
+.advantages h4{
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* Text style for "Ароматы ид" */
+	letter-spacing: 0.6px;
+	margin: 0;
+}
+.advantages p{
+	color: #ffffff;
+	font-family: Montserrat-Reg;
+	font-size: 9px;
+	font-weight: 400;
+	text-transform: uppercase;
+	/* Text style for "по всей эс" */
+	letter-spacing: 0.7px;
+}
+.advantages .img-wrap{
+	width: 53px;
+	display: flex;
+	justify-content: flex-end;
+}
+.advantages img{
+	/*max-width: 43px;
+	max-height: 25px;*/
+	height: 25px;
+	margin-right: 10px;
+}
+
+.subscribe{
+	background-color: #000;
+	padding: 22px 0;
+}
+.subscribe h4{
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* Text style for "П, ОДПИШИТ" */
+	letter-spacing: 0.6px;
+	margin: 0;
+}
+.subscribe form{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.subscribe form input{
+	width: 417px;
+	height: 37px;
+	border-radius: 5px;
+	background-color: #f0eded;
+	border: none;
+	color: #989898;
+	font-family: Montserrat-Reg;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24.05px;
+	/* Text style for "в, ведите" */
+	letter-spacing: 0.47px;
+	outline: none;
+	padding-left: 15px;
+}
+.subscribe form button{
+	width: 195px;
+	height: 37px;
+	border-radius: 5px;
+	background-color: #7e9efc;
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 24.05px;
+	/* Text style for "п, одписат" */
+	letter-spacing: 0.4px;
+	border: none;
+}
+.subscribe form button:hover{
+	cursor: pointer;
+	background-color: #567ff5;
+}
+
+
+footer{
+	background-color: #000;
+	padding: 30px 0;
+}
+footer .logo{
+	height: 58px;
+}
+footer li a{
+	color: #ffffff;
+	font-family: Montserrat-Reg;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "о нас" */
+	letter-spacing: 0.4px;
+	margin-right: 6px;
+	margin-left: 6px;
+}
+footer li a:hover{
+	text-decoration: none;
+	color: #edbe3c;
+}
+footer .sponsors img{
+	height: 38px;
+	margin-top: 20px;
+	margin-right: 4px;
+	margin-left: 4px;
+	opacity: 0.8;
+}
+footer .sponsors img:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+footer .social img{
+	height: 25px;
+	margin-left: 5px;
+	margin-bottom: 3px;
+	cursor: pointer;
+}
+footer .contact-phone{
+	color: #ffffff;
+	font-family: Montserrat-Reg;
+	font-size: 18px;
+	font-weight: 500;
+	/* Text style for "+7 996 485" */
+	letter-spacing: 0.45px;
+}
+footer .contact-phone img{
+	margin-right: 5px;
+}
+footer .contact-phone:hover{
+	text-decoration: none;
+	color: #edbe3c;
+}
+footer p{
+	color: #ffffff;
+	font-family: Montserrat-Reg;
+	font-size: 14px;
+	font-weight: 500;
+	/* Text style for "с 9:00 до" */
+	letter-spacing: 0.35px;
+	margin-bottom: 0;
+}
+footer button{
+	width: 226px;
+	height: 37px;
+	border-radius: 5px;
+	background-color: #ffffff;
+	color: #000000;
+	font-family: Montserrat;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 24.05px;
+	text-transform: uppercase;
+	/* Text style for "з, аказать" */
+	letter-spacing: 0.4px;
+	border:none;
+}
+footer button:hover{
+	cursor: pointer;
+	background-color: #edbe3c;
+}
+footer .copyright{
+	color: #ffffff;
+	font-family: Montserrat-Reg;
+	font-size: 14px;
+	font-weight: 400;
+	/* Text style for "©2019 myFr" */
+	letter-spacing: 0.35px;
+	margin-top: 35px;
+}
+
+.hoverimg-hidden{
+	display: none;
+}
+
+
+.catalog{
+	padding: 30px;
+	min-height: 800px;
+}
+.catalog .banners{
+	margin-bottom: 40px;
+}
+.catalog .banners img{
+	width: 100%;
+}
+.catalog .nav{
+	justify-content: center;
+	border-top: 1px solid #dfdfdf;
+}
+.catalog .nav li{
+	padding-top: 11px;
+}
+.catalog .nav a{
+	color: #000000;
+	font-family: Montserrat;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* Text style for "LATEST" */
+	letter-spacing: 0.25px;
+	text-decoration: none;
+	margin-right: 15px;
+	margin-left: 15px;
+	padding-top: 12px;
+
+}
+.catalog .nav a.active{
+	border-top: 1px solid #edbe3c;
+}
+.catalog .nav a:hover{
+	border-top: 1px solid #edbe3c;
+}
+.catalog h3{
+	color: #0b0b0b;
+	font-family: Montserrat;
+	font-size: 36px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* Text style for "ГАРАНТИЯ" */
+	letter-spacing: 0.9px;
+	text-align: center;
+	margin-top: 20px;
+}
+.catalog .greyline1{
+	width: 166px;
+	height: 4px;
+	background-color: #e8e8e8;
+	margin: 0 auto 60px;
+}
+.catalog .wrap5{
+	width: 95%;
+	margin: 0 auto; 
+}
+.catalog .info p{
+	color: #6b6b6b;
+	font-family: Montserrat-Reg;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	/* Text style for "m, yFragra" */
+	letter-spacing: 0.33px;
+	padding-left: 6px;
+	border-left: 3px solid #edbe3c;
+}
+.catalog .info.about p{
+	font-size: 14px;
+}
+.catalog .info p span{
+	color: #d6a429;
+}
+.catalog .info img{
+	width: 100%;
+}
+.catalog .info ul{
+	list-style-type: none;
+	margin: 0;
+}
+.catalog .info ul li{
+	font-weight: bold;
+	font-size: 18px;
+}
+#vozvrat p{
+	font-size: 18px;
+}
+.politica{
+	font-size: 12px;
+	line-height: 10px;
+	margin-top: 20px;
+	display: block;
+}
+
+.info .whatis p{
+	border-left: none;
+}
+.info .whatis h3{
+	font-size: 27px;
+	margin-top: 30px;
+}
+.catalog .clientprav{
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	/* Text style for "К, лиент д" */
+	letter-spacing: 0.33px;
+	width: 390px;
+	height: 35px;
+	border-radius: 8px;
+	background-color: #edbe3c;
+	border: none;
+	margin: 90px auto 0;
+	display: block;
+}
+.catalog .sposoboplaty{
+	height: 45px;
+	margin: 240px auto 0;
+	opacity: 0.41;
+	display: block;
+}
+.catalog .sposoboplaty.second{
+	height: 65px;
+}
+.catalog .sposoboplaty.third{
+	margin: 340px auto 0;
+}
+.catalog .sposoboplaty:hover{
+	opacity: 1;
+}
+.catalog .info.automats p{
+	font-size: 17px;
+}
+.catalog .info.automats p a{
+	font-size: 25px;
+	font-weight: bold;
+}
+.products{
+	width: 100%;
+	padding-top: 30px;
+}
+.products .product-img .add-product{
+	width: 90%;
+	margin: 0 auto;
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 10px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "добавить в" */
+	letter-spacing: 0.23px;
+	height: 37px;
+}
+.products .product-img,.podarki .product-img{
+	position: relative;
+	width: 100%;
+	height: 220px;
+	background-color: #fff;
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.bottom-block{
+	position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+.products .product-name, .podarki .product-name{
+	color: #000000;
+	font-family: Montserrat;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	height: 35px;
+	/* Text style for "T, EXT NAM" */
+	letter-spacing: 1.35px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	border: none;
+}
+.products .product-gender, .podarki .product-gender{
+	color: #000000;
+	font-family: Montserrat;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.products .product-name span, .podarki .product-name span{
+	font-size: 27px;
+}
+.products .product-descr, .podarki .product-descr{
+	color: #a19e9e;
+	font-family: Montserrat-Reg;
+	font-size: 10px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "T, EXT NAM" */
+	letter-spacing: 0.6px;
+	margin-bottom: 5px;
+	border: none;
+}
+.products .product-descr:hover, .podarki .product-descr:hover{
+	color: #edbe3c;
+}
+.products .product-price, .podarki .product-price{
+	color: #000000;
+	font-family: "Montserrat - Extra Bold";
+	font-size: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	border: none;
+}
+.products .add-product,.podarki .add-product{
+	height: 50px;
+	border-radius: 8px;
+	background-color: #edbe3c;
+	width: 100%;
+	color: #ffffff;
+	font-family: "Montserrat - Semi Bold";
+	font-size: 12px;
+	font-weight: 400;
+	text-transform: uppercase;
+	/* Text style for "ДОБАВИТЬ В" */
+	letter-spacing: 0.6px;
+	border: none;
+	margin-bottom: 5px;
+}
+.products .add-product:hover, .podarki .add-product:hover{
+	background-color: #7e9efc;
+}
+.product-opisanie{
+	background-color: #7e9efc;
+	font-family: Montserrat-Reg;
+	font-size: 11px;
+	font-weight: 700;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+.products .buy-oneclick{
+	color: #000000;
+	font-family: Montserrat-Reg;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* Text style for "купить в 1" */
+	letter-spacing: 0.55px;
+	cursor: pointer;
+}
+.products .buy-oneclick:hover{
+	text-decoration: underline;
+}
+.products .slider-buttons{
+	display: flex;
+	justify-content: center;
+	margin: 20px auto 50px;
+}
+.products .slider-buttons .slider-circle{
+	width: 18px;
+	height: 18px;
+	background-color: #dfdfdf;
+	margin-right: 3px;
+	margin-left: 3px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.products .slider-buttons .slider-circle.active{
+	background-color: #edbe3c;
+}
+.products .slider-buttons .slider-circle:hover{
+	background-color: #edbe3c;
+}
+/*
+.brands{
+	justify-content: space-between;
+	display: flex;
+	margin-bottom: 30px;
+}
+*/
+.brand-block.col-md-2{
+	width: 20%;
+	flex: 0 0 20%;
+    max-width: 20%;
+    margin-bottom: 20px;
+}
+}
+.brand-block img{
+	/*width: 100%;*/
+	height: 74px;
+	margin: 0 auto 14px;
+	display: block;
+}
+.brand-block .brand-img{
+	height: 84px;
+	width: 100%;
+	margin: 0 auto 14px;
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.brand-block button{
+	color: #000000;
+	font-family: Montserrat-Reg;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 15px;
+	text-transform: uppercase;
+	/* Text style for "V, ERSACE" */
+	letter-spacing: 0.35px;
+	border-radius: 5px;
+	background-color: #f0eded;
+	height: 50px;
+	border: none;
+	width: 100%;
+}
+.brand-block button:hover{
+	background-color: #edbe3c;
+	color: #fff;
+}
+.sidebar{
+	position: fixed;
+	width: 300px;
+	height: 100%;
+	z-index: 1000;
+	background-color: #fff;
+	display: none;
+	overflow: hidden;
+}
+.sidebar ul{
+	list-style-type: none;
+	padding: 0;
+	width: 300px;
+	margin: 0
+}
+.sidebar li{
+	border-bottom: 1px solid #eeeeee;
+	width: 100%;
+	height: 60px;
+}
+.sidebar a{
+	color: #a3a3a3;
+	font-family: Montserrat-Reg;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 28.58px;
+	/* Text style for "ИНФОРМАЦИЯ" */
+	letter-spacing: 0.33px;
+	text-decoration: none;
+	width: 100%;
+	padding: 20px 40px;
+	display: block;
+	text-transform: uppercase;
+}
+.sidebar a:hover{
+	color: #000000;
+	text-decoration: none;
+}
+.sidebar .sidebar-title{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.sidebar .sidebar-title .close-sidebar{
+	color: #000;
+	font-family: Dosis;
+	font-size: 48px;
+    font-weight: normal;
+    margin-right: 20px;
+    margin-top: -12.5px;
+}
+.sidebar .sidebar-title .close-sidebar:hover{
+	color: #a3a3a3;
+	cursor: pointer;
+}
+.sidebar .sidebar-title a{
+	color: #000000;
+	font-family: "Montserrat";
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 29.01px;
+	/* Text style for "ИНФОРМАЦИЯ" */
+	letter-spacing: 1.77px;
+	text-transform: uppercase;
+}
+.sidebar .sidebar-title a:hover{
+	text-decoration: none;
+	cursor: default;
+}
+.sidebar-opacity {
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4000px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+.sidebar-opacity.toggled {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.contacts li{
+	height: auto;
+	padding: 20px 0 20px 40px;
+}
+.contacts a{
+	padding: 0;
+	line-height: 17.58px;
+	font-size: 10px;
+}
+.contacts h4{
+	color: #000000;
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 28.98px;
+	/* Text style for "АДРЕС" */
+	letter-spacing: 0.39px;
+	margin: 0;
+	text-transform: uppercase;
+}
+.contacts h4 img{
+	margin-left: 5px;
+}
+.contacts .zakaz-consult{
+	height: 42px;
+	border-radius: 8px;
+	background-color: #000000;
+	border: none;
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 28.95px;
+	/* Text style for "ЗАКАЗАТЬ К" */
+	letter-spacing: 0.39px;
+	margin: 40px auto 0;
+	display: block;
+}
+.contacts .zakaz-consult:hover{
+	background-color: #edbe3c;
+}
+.flex{
+	display: flex;
+}
+
+.modal-wrapper {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 105;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 1;
+    visibility: hidden;
+}
+.okno{
+	width: 647px;
+	/*position: fixed;*/
+	background-color: #fff;
+	display: none;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.okno .modal-head{
+	width: 100%;
+	height: 121px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #292929;
+}
+.okno .modal-head img{
+	height: 50px;
+}
+.okno .modal-content{
+	padding: 20px 0 50px; 
+}
+.okno h3{
+	color: #000000;
+	font-family: "Montserrat";
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24.04px;
+	text-transform: uppercase;
+	/* Text style for "Б, лагодар" */
+	letter-spacing: 0.9px;
+	text-align: center;
+}
+.okno .greyline{
+	width: 83px;
+	height: 5px;
+	background-color: #e8e8e8;
+	margin: 0 auto 18px;
+} 
+.okno p{
+	color: #0b0b0b;
+	font-family: Montserrat;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "Н, аш мене" */
+	letter-spacing: 0.3px;
+	text-align: center;
+}
+.okno .subs{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.okno label{
+	color: #000000;
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.04px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    text-align: center;
+    margin-bottom: 0;
+}
+.okno .subs input[type='checkbox']{
+	height: 20px;
+	width: 20px;
+	margin-left: 10px;
+	background-color: transparent;
+}
+.okno .buttons button,.okno form button,.pokupka .buttons button,.pokupka form button{
+	width: 135px;
+	height: 34px;
+	border-radius: 5px;
+	background-color: #292929;
+	color: #ffffff;
+	font-family: Montserrat;
+	font-size: 10px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "з, акрыть" */
+	letter-spacing: 0.75px;
+	border: none;
+	margin-right: 6px;
+	margin-left: 6px;
+}
+.okno form button,.pokupka form button{
+	width: 100%;
+	margin: 0;
+	height: 31px;
+}
+.okno .buttons button.white,.pokupka .buttons button.white{
+	background-color: #fff;
+	border: 1px solid #000000;
+	color: #000;
+}
+.okno .buttons button.white:hover,.pokupka .buttons button.white:hover{
+	color: #ffffff;
+	background-color: #292929;
+	border:none;
+}
+.okno .buttons button:hover,.okno form button:hover,.pokupka .buttons button:hover,.pokupka form button:hover{
+	background-color: #edbe3c;
+}
+.okno .buttons,.pokupka .buttons{
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;	
+}
+.okno .links{
+	display: flex;
+	justify-content: center; 
+}
+.okno .links a{
+	color: #0b0b0b;
+	font-family: Montserrat;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "email@emai" */
+	letter-spacing: 0.25px;
+	margin: 0 17px;
+}
+.okno .links a i{
+	margin-right: 5px;
+	font-size: 14px;
+}
+.okno .links a:hover{
+	color: #0b0b0b;
+}
+.okno form{
+	width: 80%;
+	margin: 0 auto;
+}
+.okno form label,.pokupka form label{
+	text-align: right;
+	padding-right: 0;
+	color: #0b0b0b;
+	font-family: Montserrat;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "И, МЯ" */
+	letter-spacing: 0.25px;
+}
+.okno form input,.pokupka form input{
+	color: #7d7d7d;
+	font-family: Montserrat;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	/* Text style for "И, МЯ" */
+	letter-spacing: 0.3px;
+	height: 31px;
+	border: 1px solid #eeeeee;
+	background-color: #f8f7f7;
+	border-radius: 0;
+}
+.pokupka .form-check input[type=checkbox]{
+	margin-top: 6px;
+	width: 15px;
+	height: 15px;
+	border-radius: 2px;
+	border: 1px solid #c7c6c6;
+	background-color: #ffffff;
+}
+.okno h5{
+	color: #000000;
+	font-family: "Montserrat";
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
+	text-transform: uppercase;
+	/* Text style for "с, умма за" */
+	letter-spacing: 0.9px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+.basket .basket-table{
+	color: #0b0b0b;
+	font-family: Montserrat-Reg;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	/* Text style for "Н, азвание" */
+	letter-spacing: 0.35px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+.basket .basket-table .img-block{
+	background-color: #fff;
+	height: 80px;
+	width: 80px;
+	margin: 0 auto;
+	display: block;
+	border-radius: 5px;
+	background-size: 100%;
+	background-position: center;
+}
+.basket .basket-table thead{
+	background-color: #f8f7f7;
+}
+.basket .basket-table .numoftovar{
+	width: 54px;
+	height: 26px;
+	border: 1px solid #eeeeee;
+	background-color: #f8f7f7;
+	color: #0b0b0b;
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "1," */
+	letter-spacing: 0.35px;
+	padding-left: 6px;
+}
+.kupon span{
+	color: #0b0b0b;
+	font-family: Montserrat-Reg;
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+	/* Text style for "в, ведите" */
+	letter-spacing: 0.75px;
+}
+.kupon input, .adrs{
+	height: 34px;
+	border-radius: 5px;
+	background-color: #f8f7f7;
+	width: 100%;
+	border: none;
+	padding-left: 10px;
+	color: #0b0b0b;
+	font-family: Montserrat-Reg;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	/* Text style for "в, ведите" */
+	letter-spacing: 0.75px;
+}
+.basket button{
+	height: 34px;
+	border-radius: 5px;
+	background-color: #000000;
+	color: #ffffff;
+	font-family: Montserrat-Reg;
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+	/* Text style for "п, рименит" */
+	letter-spacing: 0.75px;
+	width: 100%;
+	border: none;
+}
+.basket button[disabled]:hover{
+	background-color: #000000;
+	cursor: default;
+}
+.basket button:hover{
+	background-color: #edbe3c;
+}
+.basket button.greyback{
+	background-color: #f8f7f7;
+	color: #000;
+}
+.basket button.greyback:hover{
+	background-color: #edbe3c;
+	color: #fff;
+}
+.kupon{
+	margin-bottom: 30px;
+}
+.basket .mini-icon{
+	width: 16px !important;
+	height: 15px;
+	margin-left: 5px;
+}
+.basket .sposob-dostavki span, .basket .sposob-dostavki label{
+	color: #0b0b0b;
+	font-family: Montserrat-Reg;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	/* Text style for "в, ведите" */
+	letter-spacing: 0.75px;
+}
+.basket .sposob-dostavki span{
+	display: block;
+	margin-bottom: 10px;
+}
+.basket .sposob-dostavki input{
+	margin-top: 7px;
+}
+.basket .itogo-table{
+	color: #0b0b0b;
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	/* Text style for "с, умма" */
+	letter-spacing: 0.35px;
+	text-align: center;
+}
+.basket .action-buttons{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.basket .podarki h5{
+	color: #000000;
+	font-family: Montserrat;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* Text style for "П, одарочн" */
+	letter-spacing: 1.35px;
+	margin: 0 auto 20px;
+}
+.catalog .left-menu{
+	margin-left: -30px;
+	margin-top: -30px;
+	width: 25%;
+	float: left;
+}
+.catalog .left-menu table{
+	border-bottom: none;
+}
+.catalog .left-menu h2{
+	color: #000000;
+	font-family: Montserrat;
+	font-size: 22px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* Text style for "КАТЕГОРИИ" */
+	letter-spacing: 1.02px;
+	text-align: center;
+}
+.catalog .left-menu .razdel{
+	color: #000;
+	font-family: Montserrat-Reg;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+	/* Text style for "бренды (0)" */
+	letter-spacing: 0.37px;
+	width: 100%;
+}
+.catalog .left-menu .razdel i{
+	color: #dddcdc;
+	float: right;
+	font-size: 21px;
+	margin-top: 3px;
+}
+.catalog .left-menu ul{
+	list-style-type: none;
+	padding-left: 0px;
+}
+.catalog .left-menu .razdel:hover,.catalog .left-menu .podrazdel:hover{
+	color: #edbe3c;
+	text-decoration: none;
+}
+.catalog .left-menu .razdel.active,.catalog .left-menu .podrazdel.active{
+	color: #edbe3c;
+	text-decoration: none;
+}
+.catalog .left-menu .podrazdel{
+	color: #b0afaf;
+	font-family: Montserrat-Reg;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	/* Text style for "TEXT (0)" */
+	letter-spacing: 0.37px;
+}
+.right-content{
+	width: 75%;
+	float: right;
+}
+.right-content.products{
+	padding-top: 0;
+}
+.right-content.products .product-blokk{
+	cursor: pointer;
+}
+.right-content.products .product-blokk .product-name{
+	height: 76px;
+}
+.right-content .top-block{
+	height: 110px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.right-content .top-block .intensive{
+	height: 50px;
+	width: 50px;
+}
+.right-content .bottom-block{
+	height: 110px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+.right-content.products .add-product{
+	display: block;
+}
+.product-block{
+	margin-top: 20px;
+}
+
+
+.tovar-page img{
+	width: 100%;
+	display: block;
+	border-left: 3px solid #edbe3c;
+}
+.tovar-page .text-group{
+	margin-bottom: 20px;
+}
+.tovar-page p{
+	margin-bottom: 5px;
+	color: #6b6b6b;
+    font-family: Montserrat-Reg;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.33px;
+}
+.tovar-page .text-group .add-productt{
+    height: 50px;
+    border-radius: 8px;
+    background-color: #edbe3c;
+    width: 100%;
+    color: #ffffff;
+    font-family: "Montserrat - Semi Bold";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border: none;
+    margin-bottom: 5px;
+}
+.tovar-page .text-group .add-productt:hover{
+	background-color: #7e9efc;
+}
+.tovar-page .descr{
+	margin-top: 10px;
+	text-align: justify;
+}
+.tovar-page .text-group .buy-oneclickk {
+    color: #000000;
+    font-family: Montserrat-Reg;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.55px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.tovar-page .text-group .buy-oneclickk:hover{
+	text-decoration: underline;
+}
+
+
+
+#subs-alert{
+    display: none;
+    position: fixed;
+    float: right;
+    z-index: 3000;
+    margin-left: 30px;
+}
+
+.modal-search{
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    width: 900px;
+}
+.modal-search .search-query{
+	height: 80px;
+	border-radius: 0;
+	line-height: 40px;
+    padding: 0 40px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border: none;
+    font-family: Montserrat;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.modal-search .input-group-addon{
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-radius: 0;
+    padding: 0;
+    border-color: #F6F6F6;
+}
+.modal-search .search-button{
+	height: 80px;
+	width: 80px;
+	border-radius: 0;
+	font-size: 32px;
+    line-height: 18px;
+    border: none;
+    background-color: #fff;
+    color: #E5E5E5;
+}
+.modal-search .search-button:hover{
+	color: #495057;
+}
+
+.fading{
+	opacity: 0;
+	transition: all 0.7s ease-in-out 0s;
+	background-color: #000;
+}
+.fading.comein{
+	opacity: 1;
+}
+.mobile{
+  display: none;
+}
+
+@media (max-width: 1100px) {	
+	
+}
+
+@media (max-width: 575.98px) {
+	.catalog .info.automats p{
+		font-size: 13px;
+	}
+	.catalog .info.automats p a{
+		font-size: 17px;
+	}
+	.wrap {
+    	padding: 0 6px;
+	}
+	.sidebar{
+		width: 320px;
+		overflow-y: scroll;
+	}
+	.sidebar a{
+		padding: 20px;
+		line-height: 20px;	
+	}
+	.sidebar.contacts a{
+		padding: 3px;
+	}
+	.sidebar ul{
+		width: 320px;
+	}
+	.contacts li{
+		padding: 10px 0 10px 40px;
+	}
+	.hat{
+		padding: 10px 0;
+	}
+	.hat ul{
+		justify-content: space-between;
+	}
+	.hat ul li{
+		margin-left: 0;
+	}
+	.hat a{
+		font-size: 7px;
+	}
+	.hat a img {
+	    height: 10px;
+	    margin-right: 1px;
+	}
+	.hat a i{
+		margin-right: 1px;
+		font-size: 9px;
+	}
+	.translated {
+	    float: left;
+	    position: absolute;
+	    margin-left: 0 !important;
+	    left: 0;
+	    top: 30px;
+	    width: 200px;
+	}
+	.mobile{
+		display: block;
+	}
+	header{
+		overflow-x: hidden
+	}
+	header .logo{
+		height: 49px;
+	}
+	header .wrap{
+		padding-left: 20px;
+	}
+	header .ml30{
+		margin-left: 0;
+	}
+	header .mr30{
+		margin-right: 0;
+	}
+	header .icon-block{
+		justify-content: space-around;
+	}
+	header .icon-block img{
+		width: 35px;
+	}
+	header .icon-block .img-wrap {
+	    height: 36px;
+	}
+	header .icon-block .contact-icon{
+		width: 30px;
+	}
+	header .icon-block b.numofbasket{
+		font-size: 37px;
+    	line-height: 33px;
+	}
+	header .icon-block span{
+		font-size: 11px;
+	}
+	header .logo{
+		margin-bottom: 20px;
+	}
+	footer .logo{
+		margin: 0 auto 20px;
+		height: 49px;
+		display: block;
+	}
+	footer .copyright{
+		font-size: 9px;
+		text-align: center;
+	}
+	
+	nav{
+		padding: 10px 0;
+	}
+	nav a{
+		margin: 0;
+	}
+	nav a i{
+	    font-size: 11px !important;
+	    margin-right: 2px;
+	}
+	nav ul{
+		justify-content: space-between;
+	}
+	.sale-line{
+		padding: 14px 0;
+	}
+	.sale-line h3{
+		font-size: 13px;
+	}
+	main{
+		background-image: none;
+		padding-top: 10px;
+		background-color: #fff;
+	}
+	main .catalog{
+		width: 100%;
+		padding: 0;
+	}
+
+	.catalog .banners img{
+		margin-bottom: 20px;
+	}
+	.catalog .nav a{
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+	.products .product-descr, .podarki .product-descr{
+		font-size: 12px;
+		text-align: center;
+	}
+	.products .buy-oneclick{
+		font-size: 13px;
+		text-align: center;
+
+	}
+	.products .product-price, .podarki .product-price{
+		text-align: center;
+	}
+	.brands{
+		display: block;
+	}
+	.brand-block{
+		width: 70%;
+		margin: 0 auto 40px;
+	}
+	footer .sponsors img{
+		height: 21px;
+	}
+	.mbb20{
+		margin-bottom: 10px;
+	}
+
+	.basket .sposob-dostavki span, .basket .sposob-dostavki label{
+		font-size: 10px;
+	}
+	.basket .itogo-table{
+		margin-top: 20px;
+	}
+	.basket .basket-table{
+		font-size: 7px;
+	}
+	.basket .basket-table .img-block{
+		width: 60px;
+		height: 60px;
+	}
+	.basket .basket-table .numoftovar{
+		margin-bottom: 5px;
+		width: 100%;
+	}
+	.okno{
+		width: 95%;
+	}
+
+	.catalog .left-menu {
+	    width: 100%;
+	    margin: 0 auto;
+	    float: none;
+	}
+	.catalog .left-menu table{
+		width: 100%;
+	}
+	.catalog .left-menu table td{
+		padding-left: 20px;
+	}
+	.catalog .left-menu h2{
+		font-size: 12px;
+	}
+	.catalog .left-menu .razdel{
+		font-size: 10px;
+	}
+	.catalog .left-menu .razdel i {
+	    font-size: 14px;
+	    line-height: 25px;
+	}
+	.catalog .left-menu .podrazdel{
+		font-size: 12px;
+	}
+	.catalog .right-content{
+		width: 80%;
+		margin: 20px auto;
+		float: none;
+	}
+	.products .product-img, .podarki .product-img{
+		width: 100%;
+		margin: 0 auto;
+		background-size: 70%;
+	}
+	.products .product-name, .podarki .product-name{
+		text-align: center;
+		height: auto;
+	}
+	.right-content.products .product-blokk{
+		margin-bottom: 20px;
+	}
+	.catalog h3{
+		font-size: 27px;
+	}
+	.catalog .clientprav{
+		width: 100%;
+		font-size: 9px;
+	}
+	.subscribe{
+		overflow-x: hidden;
+	}
+	.subscribe h4{
+		margin-bottom: 20px;
+	}
+	.subscribe form button{
+		font-size: 10px;
+		width: 150px;
+	}
+	.okno h3{
+		font-size: 16px;
+	}
+	.okno form label, .pokupka form label{
+		text-align: left;
+	}
+	.okno p{
+		font-size: 11px;
+	}
+	.okno .links a{
+		font-size: 10px;
+	}
+	.product-card{
+		margin-bottom: 20px;
+	}
+
+	.full{
+		display: none;
+	}
+	footer button{
+		line-height: 14px;
+	}
+	.brand-block.col-md-2{
+		width: 80%;
+		max-width: 80%;
+		flex: 0 0 80%;
+	}
+	.brand-block .brand-img{
+		width: 50%;
+		display: block;
+		margin: 0 auto 20px;
+	}
+	.product-card{
+		width: 70% !important;
+		margin: 0 auto;
+	}
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.mobile{
+		display: block;
+	}
+	header .logo{
+		margin-bottom: 20px;
+	}
+	.wrap {
+    	padding: 0 20px;
+	}
+	.sale-line h3{
+		font-size: 22px;
+	}
+	main{
+		background-image: none;
+		padding-top: 0;
+		background-color: #fff;
+	}
+	main .catalog{
+		width: 100%;
+		padding: 0;
+		padding-top: 20px;
+	}
+	.catalog .nav a{
+		padding-top: 17px;
+		font-size: 12px;
+	}
+	.brand-block button{
+		line-height: 17px;
+	}
+	.subscribe h4{
+		margin-bottom: 20px;
+	}
+	.subscribe form button{
+		margin-left: 10px;
+	}
+	footer .logo{
+		margin: 0 auto 20px;
+		display: block;
+	}
+	.sponsors{
+		margin-bottom: 20px;
+	}
+	.okno p{
+		font-size: 11px;
+	}
+	.okno .links a{
+		font-size: 10px;
+	}
+	.okno{
+		width: 95%;
+	}
+
+	.catalog .left-menu {
+	    width: 100%;
+	    margin: 0 auto;
+	    float: none;
+	}
+
+	.brand-block.col-md-2{
+		width: 33.3%;
+		max-width: 33.3%;
+		flex: 0 0 33.3%;
+	}
+	.brand-block .brand-img{
+		width: 80%;
+		display: block;
+		margin: 0 auto 20px;
+	}
+
+	.catalog .left-menu table{
+		width: 100%;
+	}
+	.catalog .left-menu table td{
+		padding-left: 20px;
+	}
+	.catalog .left-menu h2{
+		font-size: 12px;
+	}
+	.catalog .left-menu .razdel{
+		font-size: 10px;
+	}
+	.catalog .left-menu .razdel i {
+	    font-size: 14px;
+	    line-height: 25px;
+	}
+	.catalog .left-menu .podrazdel{
+		font-size: 12px;
+	}
+	.catalog .right-content{
+		width: 80%;
+		margin: 20px auto;
+		float: none;
+	}
+	.right-content.products .product-blokk{
+		margin-bottom: 20px;
+	}
+	.pokupka form label{
+		text-align: right;
+	}
+	.pokupka form .form-check-label{
+		text-align: left;
+	}
+	.products .product-img, .podarki .product-img{
+		background-size: 70%;
+		margin: 0 auto;
+	}
+	.products .product-name, .podarki .product-name{
+		text-align: center;
+	}
+	.products .product-descr, .podarki .product-descr{
+		text-align: center;
+	}
+	.products .product-price, .podarki .product-price{
+		text-align: center;
+	}
+	.products .buy-oneclick{
+		text-align: center;
+	}
+	.sidebar{
+		overflow-y: auto;
+	}
+	.full{
+		display: none;
+	}
+	.translated {
+	    float: left;
+	    position: absolute;
+	    margin-left: 0 !important;
+	    left: 5px;
+	    top: 50px;
+	    width: 200px;
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	header .logo{
+		height: 46px;
+	}
+	header .icon-block img{
+		width: 37px;
+	}
+	header .icon-block b.numofbasket{
+		font-size: 41px;
+	}
+	header .icon-block .contact-icon{
+		width: 33px;
+	}
+	header .icon-block .img-wrap{
+		height:43px;
+	}
+	header .icon-block span{
+		font-size: 14px;
+	}
+	.sale-line h3{
+		font-size: 23px;
+	}
+	main{
+		background-image: none;
+		padding-top: 0;
+		background-color: #fff;
+	}
+	main .catalog{
+		width: 100%;
+		padding: 0;
+		padding-top: 20px;
+	}
+	.brand-block button{
+		line-height: 14px;
+	}
+	footer .logo{
+		height:40px;
+	}
+	footer .contact-phone{
+		font-size: 14px;
+	}
+	footer button{
+		line-height: 14px;
+	}
+	.sponsors{
+		margin-top: 40px;
+	}
+	footer .copyright{
+		font-size: 12px;
+	}
+	.basket .sposob-dostavki span, .basket .sposob-dostavki label{
+		font-size: 11px;
+	}
+	.basket button{
+		font-size: 9px;
+	}
+	.sposob-oplaty .form-check-label{
+		text-align: left;
+	}
+	.catalog .left-menu{
+		margin-top: 0;
+	}
+	.okno{
+		width: 95%;
+	}
+	.subscribe form button{
+		margin-left: 10px;
+	}
+	.brand-block.col-md-2{
+		width: 25%;
+		max-width: 25%;
+		flex: 0 0 25%;
+	}
+	.brand-block .brand-img{
+		width: 80%;
+		display: block;
+		margin: 0 auto 20px;
+	}
+	.products .product-name, .podarki .product-name{
+		height: 125px;
+	}
+	.translated {
+	    float: left;
+	    position: absolute;
+	    margin-left: 0 !important;
+	    left: 0;
+	    top: 40px;
+	    width: 200px;
+	}
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	header .icon-block span{
+		font-size: 14px;
+	}
+	.subscribe form button{
+		margin-left: 10px;
+	}
+	footer p.mbb20{
+		text-align: right;
+	}
+	footer p{
+		font-size: 13px;
+	}
+	footer .logo{
+		height: 49px;
+	}
+
+	.brand-block.col-md-2{
+		width: 25%;
+		max-width: 25%;
+		flex: 0 0 25%;
+	}
+	.brand-block .brand-img{
+		width: 80%;
+		display: block;
+		margin: 0 auto 20px;
+	}
+	.products .product-name, .podarki .product-name{
+		height: 125px;
+	}
+	.translated {
+	    float: left;
+	    position: absolute;
+	    margin-left: 0 !important;
+	    left: 0;
+	    top: 40px;
+	    width: 200px;
+	}
+}
