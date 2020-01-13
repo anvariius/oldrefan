@@ -86,7 +86,7 @@ elseif (!isset($feedback[0]['id'])) {
 					</div>
 					<div class="col">
 						<label>Название товара</label>
-						<input type="text" class="form-control" placeholder="Введите город" name="tovar" required="" maxlength="100">
+						<input type="text" class="form-control" placeholder="Введите название" name="tovar" required="" maxlength="100">
 					</div>
 				</div>
 				<div class="form-row mt-3">
