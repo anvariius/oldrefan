@@ -1,7 +1,7 @@
 <?php 
 include 'header.php'; 
 
-$feedback = sequery("SELECT id,name,city,tovar,message,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 2");
+$feedback = sequery("SELECT id,name,city,tovar,message,answer,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 2");
 if (count($feedback) == 0) {
 	$feedback = false;
 }
@@ -29,6 +29,10 @@ elseif (!isset($feedback[0]['id'])) {
 	}
 	.fb-name{
 		margin-bottom: 5px;
+	}
+	.fb-text span{
+		font-weight: bold;
+		color: #ffc107;
 	}
 </style>
 <h3>Отзывы покупателей</h3>
@@ -64,6 +68,9 @@ elseif (!isset($feedback[0]['id'])) {
 							<a href="feedback/<?php echo $w['img_url'] ?>" class="lightzoom" target="_blank" style="background-image: url(feedback/<?php echo $w['img_url'] ?>);"></a>
 							<?php } ?>
 						</div>
+						<?php if($v['answer'] != ''){ ?>
+						<p class="fb-text"><span>RefanParfum: </span><?php echo $v['answer']; ?></p>
+						<?php } ?>
 					</div>
 				</div>
 				<hr>

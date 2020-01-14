@@ -2,7 +2,7 @@
 include '../bt/pdo.php';
 include 'header.php';
 $fb_new = sequery("SELECT id,name,city,tovar,message,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 1");
-$fb_old = sequery("SELECT id,name,city,tovar,message,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 2 ORDER BY data DESC");
+$fb_old = sequery("SELECT id,name,city,tovar,message,answer,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 2 ORDER BY data DESC");
 if (count($fb_new) == 0) {
 	$fb_new = false;
 }
@@ -35,6 +35,9 @@ elseif (!isset($fb_old[0]['id'])) {
 	    background-position: center;
 	    background-repeat: no-repeat;
 	    border-radius: 10px;
+	}
+	.fb-answer{
+		width: 70%;
 	}
 </style>
 <div class="container">
@@ -98,7 +101,18 @@ elseif (!isset($fb_old[0]['id'])) {
 				</div>
 				<hr class="my-4">
 				<a class="btn btn-danger fb-remove" href="#">Удалить</a>
+				<a class="btn btn-primary fb-ans" href="#">Ответ на отзыв</a>
 				</p>
+				<div class="answer-block d-none">
+					<p>Ответ на отзыв:</p>
+					<form action="engine2.php" method="post">
+						<input type="hidden" name="action" value="fb-answer">
+						<input type="hidden" name="token" value="<?php echo $token2; ?>">
+	    				<input type="hidden" name="fb-id" value="<?php echo $v['id']; ?>">
+						<textarea class="form-control fb-answer" placeholder="Введите ответ" cols="30" rows="3" name="answer"><?php echo $v['answer']; ?></textarea>
+						<button type="submit" class="btn btn-primary mt-3" disabled="true">Сохранить</button>
+					</form>
+				</div>
 			</div>
 			<?php } ?>
 		</div>
@@ -119,5 +133,18 @@ include 'footer.php';
 		$.post('engine2.php', {token:'<?php echo $token2; ?>', action: 'fb_access', fb_id: fb_id}, function (data) {
 			location.reload();
 		});
+	});
+
+	$('.fb-answer').change(function () {
+		$(this).closest('form').find('button').removeAttr('disabled');
+	});
+	$('.fb-ans').click(function () {
+		var ans_block = $(this).closest('.jumbotron').find('.answer-block');
+		if(ans_block.hasClass('d-none')){
+			ans_block.removeClass('d-none');
+		}
+		else{
+			ans_block.addClass('d-none');
+		}
 	});
 </script>

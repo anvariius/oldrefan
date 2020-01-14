@@ -363,6 +363,12 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			$id = $_POST['fb_id'];
 			$query = query("UPDATE feedback SET status=2 WHERE id=:id",compact('id'));
 			echo 'ok';
+			break;	
+		case 'fb-answer':
+			$id = $_POST['fb-id'];
+			$answer = $_POST['answer'];
+			$query = query("UPDATE feedback SET answer=:answer WHERE id=:id",compact('answer','id'));
+			header("Location: feedback.php");
 			break;							
 		default:
 			# code...
