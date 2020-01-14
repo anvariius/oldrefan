@@ -69,7 +69,7 @@ elseif (!isset($feedback[0]['id'])) {
 							<?php } ?>
 						</div>
 						<?php if($v['answer'] != ''){ ?>
-						<p class="fb-text"><span>RefanParfum: </span><?php echo $v['answer']; ?></p>
+						<p class="fb-text mt-3"><span>RefanParfum: </span><?php echo $v['answer']; ?></p>
 						<?php } ?>
 					</div>
 				</div>
