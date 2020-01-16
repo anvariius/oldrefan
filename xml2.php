@@ -19,7 +19,7 @@ $query = sequery("SELECT * FROM catalog WHERE status != 0");
 		<link>https://refanparfum.lv/tovar.php?product-id=<?php echo $v['id']; ?></link><br>
 		<price><?php echo $v['price']; ?></price><br>
 		<image>https://refanparfum.lv/catalog/<?php echo $v['img_url']; ?></image><br>
-		<manufacturer><?php echo getBrand($v['brand']); ?></manufacturer><br>
+		<manufacturer>Refan</manufacturer><br>
 		<category>Skaistums un veselība</category><br>
 		<category_full>Skaistums un veselība > <?php if($v['gender']=='0'){echo "Sieviešu smaržas";}else{echo "Vīriešu smaržas";} ?></category_full><br>
 	</item>

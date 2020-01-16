@@ -76,13 +76,11 @@
 
 			    for ($i = 0; $i < count($query) - $j - 1; $i++){
 			        // если текущий элемент больше следующего
-			        $query[$i]['name'] = trim($query[$i]['name']);
-			        $query[$i+1]['name'] = trim($query[$i+1]['name']);
-			        $num1 = substr($query[$i]['name'],-4,3);
+			        $num1 = $query[$i]['refan'];
 			        if ($num1[0] == '0') {
 			        	$num1 = substr($num1,1);
 			        }
-			        $num2 = substr($query[$i+1]['name'],-4,3);
+			        $num2 = $query[$i+1]['refan'];
 			        if ($num2[0] == '0') {
 			        	$num2 = substr($num2,1);
 			        }
