@@ -5,7 +5,7 @@
 	}
 	else{
 		$zapros = $_GET['query'];
-		$query = sequery("SELECT * FROM catalog WHERE name LIKE '%$zapros%' OR brand LIKE '%$zapros%' OR refan LIKE '%$zapros%'");
+		$query = sequery("SELECT * FROM catalog WHERE (name LIKE '%$zapros%' OR brand LIKE '%$zapros%' OR refan LIKE '%$zapros%') AND status != 0");
 	}
 ?>
 <h3>ПОИСК - <?php echo $zapros; ?></h3>
