@@ -6,7 +6,7 @@ if (!isset($_SESSION['sort'])) {
 	$_SESSION['sort'] = 'old';
 	$_SESSION['sort_text'] = 'Сначала старые';
 }
-if (!isset($_COOKIE['auth']) || $_COOKIE['auth'] != 'acrqc9') {
+if (!isset($_COOKIE['auth']) || $_COOKIE['auth'] != 's6cWZ6xUyG') {
 	header("Location: index.php");
 }
 if (isset($_GET['category'])) {

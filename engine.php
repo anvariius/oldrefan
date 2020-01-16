@@ -184,17 +184,17 @@ if (isset($_POST['action'])) {
 			mail($to, $subject, $zapros, $headers);
 			break;	
 		case 'auth':
-			if ($_POST['login'] != 'admin' && $_POST['password'] != 'acrqc9') {
+			if ($_POST['login'] != 'admin' && $_POST['password'] != 's6cWZ6xUyG') {
 				echo 'invalid_form';
 			}
 			elseif ($_POST['login'] != 'admin') {
 				echo 'invalid_login';
 			}
-			elseif ($_POST['password'] != 'acrqc9') {
+			elseif ($_POST['password'] != 's6cWZ6xUyG') {
 				echo 'invalid_password';
 			}
 			else{
-				setcookie('auth', 'acrqc9');
+				setcookie('auth', 's6cWZ6xUyG');
 				echo 'valid_form';
 			}
 			break;	

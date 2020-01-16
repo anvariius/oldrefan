@@ -1,5 +1,5 @@
 <?php
-if (isset($_COOKIE['auth']) && $_COOKIE['auth'] == 'acrqc9') {
+if (isset($_COOKIE['auth']) && $_COOKIE['auth'] == 's6cWZ6xUyG') {
 	header("Location: main.php");
 }
 ?>
