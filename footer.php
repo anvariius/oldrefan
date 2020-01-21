@@ -85,7 +85,6 @@
 						<li><a href="politica.php">Политика конфиденциальности</a></li>
 					</ul>
 					<div class="sponsors flex justify-content-center mbb20">
-						<img src="img/applepay.png" alt="">
 						<img src="img/visamastercard.png" alt="">
 						<img src="img/dpd.png" alt="">
 						<img src="img/omniva.png" alt="">
@@ -93,6 +92,7 @@
 							<img style="Border:none;" alt="Visi Internetveikali un cenas"
 							src="//www.kurpirkt.lv/media/kurpirkt88.gif" width=88 height=31>
 						</a>
+						<a href="https://www.salidzini.lv/"><img border="0" alt="Salidzini.lv logotips" title="Labākā cena interneta veikalos - Samsung, iPhone, Mobilie telefoni, Cena" src="https://static.salidzini.lv/images/logo_button.gif"/></a>
 					</div>
 				</div>
 				<div class="col-md-3">
