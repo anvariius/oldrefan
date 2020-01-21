@@ -19,7 +19,7 @@ $query = sequery("SELECT * FROM catalog WHERE status != 0");
 		<link>https://refanparfum.lv/tovar.php?product-id=<?php echo $v['id']; ?></link><br>
 		<price><?php echo $v['price']; ?></price><br>
 		<image>https://refanparfum.lv/catalog/<?php echo $v['img_url']; ?></image><br>
-		<category_full>Skaistums un veselība > <?php if($v['gender']=='0'){echo "Sieviešu smaržas";}else{echo "Vīriešu smaržas";} ?></category_full><br>
+		<category_full>Skaistums un veselība > Parfimērija > <?php if($v['gender']=='0'){echo "Sieviešu smaržas";}else{echo "Vīriešu smaržas";} ?></category_full><br>
 		<category_link>https://www.refanparfum.lv/catalog.php?category=<?php if($v['gender']=='0'){echo "woman";}else{echo "man";} ?></category_link><br>
 		<brand>Refan</brand><br>
 		<delivery_omniva>3.00</delivery_omniva><br>
