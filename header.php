@@ -232,12 +232,14 @@
   	</div>
 	<div class="modal-wrapper">
 		<div class="okno modal-search">
+			<form action="search.php" method="GET" style="width: 100%;">
 			<div id="search" class="input-group">
-	        	<input type="text" name="search" placeholder="Поиск" class="form-control input-lg search-query">
+	        	<input type="text" name="query" placeholder="Поиск" class="form-control input-lg search-query">
 	        	<span class="input-group-addon">
-	          		<button type="button" class="btn btn-default btn-lg search-button" onclick="toPage('search.php?query='+$('.search-query').val());"><i class="fa fa-search"></i></button>
+	          		<button type="submit" class="btn btn-default btn-lg search-button"><i class="fa fa-search"></i></button>
 	        	</span>
       		</div>
+      		</form>
 		</div>
 		<div class="okno zakaz">
 			<div class="modal-head">

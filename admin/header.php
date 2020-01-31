@@ -76,9 +76,10 @@ if (!isset($_COOKIE['auth']) || $_COOKIE['auth'] != 's6cWZ6xUyG') {
 		      		</li>
 		      		-->
 		    	</ul>
-		    	<form class="form-inline my-2 search-tovar">
-		      		<input class="form-control mr-sm-2" type="search" placeholder="поиск по каталогу" aria-label="поиск по каталогу">
-		      		<button class="btn btn-outline-success my-2" type="button">Поиск</button>
+		    	<form class="form-inline my-2 search-tovar" method="GET" action="main.php">
+		    		<input type="hidden" name="category" value="search">
+		      		<input class="form-control mr-sm-2" type="search" placeholder="поиск по каталогу" aria-label="поиск по каталогу" name="query">
+		      		<button class="btn btn-outline-success my-2" type="submit">Поиск</button>
 		    	</form>
 		  	</div>
 	  	</div>
