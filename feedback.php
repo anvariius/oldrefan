@@ -1,7 +1,7 @@
 <?php 
 include 'header.php'; 
 
-$feedback = sequery("SELECT id,name,city,tovar,message,answer,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 2");
+$feedback = sequery("SELECT id,name,city,tovar,message,answer,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 2 ORDER BY data DESC");
 if (count($feedback) == 0) {
 	$feedback = false;
 }

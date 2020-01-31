@@ -74,7 +74,7 @@ elseif (!isset($feedback[0]['id'])) {
 					</div>
 					<div class="col">
 						<label>Email</label>
-						<input type="email" class="form-control" placeholder="Введите email" name="email" required="" maxlength="100">
+						<input type="email" class="form-control" placeholder="Введите email" name="email" maxlength="100">
 					</div>
 				</div>
 				<div class="form-row mt-3">
@@ -82,11 +82,11 @@ elseif (!isset($feedback[0]['id'])) {
 				<div class="form-row mt-3">
 					<div class="col">
 						<label>Город</label>
-						<input type="text" class="form-control" placeholder="Введите город" name="city" required="" maxlength="60">
+						<input type="text" class="form-control" placeholder="Введите город" name="city" maxlength="60">
 					</div>
 					<div class="col">
 						<label>Название товара</label>
-						<input type="text" class="form-control" placeholder="Введите название" name="tovar" required="" maxlength="100">
+						<input type="text" class="form-control" placeholder="Введите название" name="tovar" maxlength="100">
 					</div>
 				</div>
 				<div class="form-row mt-3">
