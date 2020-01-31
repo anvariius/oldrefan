@@ -10,6 +10,6 @@
 			window.location.replace('main.php?category=search&query='+search_form.val());
 		}
 	});
-	?*
+	*/
 </script>
 </html>
