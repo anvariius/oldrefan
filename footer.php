@@ -587,17 +587,9 @@
 		var user_name = $('.pokupka .user-name'),
 			user_phone = $('.pokupka .user-phone'),
 			user_email = $('.pokupka .user-email'),
-			iserror = false;
-		if (user_name.val() == '') {
-			user_name.css('border-color','red');
-			iserror = true;
-		}	
+			iserror = false;	
 		if (user_phone.val() == '') {
 			user_phone.css('border-color','red');
-			iserror = true;
-		}
-		if (user_email.val() == '' || user_email.val().indexOf("@") == -1) {
-			user_email.css('border-color','red');
 			iserror = true;
 		}
 		if (iserror == false){
@@ -670,16 +662,8 @@ var hash_phone;
 			summa_zakaz = $('.okno.one-click h5 span').text();
 			pakomat = '',
 			iserror = false; 	
-		if (user_name.val() == '') {
-			user_name.css('border-color','red');
-			iserror = true;
-		}	
 		if (user_phone.val() == '') {
 			user_phone.css('border-color','red');
-			iserror = true;
-		}
-		if (user_email.val() == '') {
-			user_email.css('border-color','red');
 			iserror = true;
 		}
 		if ($('#gridCheck1').is(':checked')) {
