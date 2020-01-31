@@ -16,6 +16,9 @@
 		elseif($value == '0'){
 			return 'Women';
 		}
+		elseif($value == '2'){
+			return 'Unisex';
+		}
 		else{
 			return '';
 		}

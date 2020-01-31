@@ -7,10 +7,10 @@
 		$category = $_GET['category'];
 		switch ($_GET['category']) {
 			case 'man':
-				$query = sequery("SELECT * FROM catalog WHERE status != 0 AND intensive = 0 AND gender = 1");
+				$query = sequery("SELECT * FROM catalog WHERE status != 0 AND intensive = 0 AND gender in (1,2)");
 				break;
 			case 'woman':
-				$query = sequery("SELECT * FROM catalog WHERE status != 0 AND intensive = 0 AND gender = 0");				
+				$query = sequery("SELECT * FROM catalog WHERE status != 0 AND intensive = 0 AND gender in (0,2)");				
 				break;
 			case 'brands':
 				if (isset($_GET['brand-id'])) {
@@ -50,8 +50,8 @@
 				
 	}
 
-	$mans_count = sequery("SELECT COUNT(1) FROM catalog WHERE status != 0 AND intensive = 0 AND gender = 1");
-	$womans_count = sequery("SELECT COUNT(1) FROM catalog WHERE status != 0 AND intensive = 0 AND gender = 0");
+	$mans_count = sequery("SELECT COUNT(1) FROM catalog WHERE status != 0 AND intensive = 0 AND gender in (1,2)");
+	$womans_count = sequery("SELECT COUNT(1) FROM catalog WHERE status != 0 AND intensive = 0 AND gender in (0,2)");
 	$probniki_count = sequery("SELECT COUNT(1) FROM catalog WHERE status != 0 AND intensive = 1");
 	$accs_count = sequery("SELECT COUNT(1) FROM catalog WHERE status != 0 AND intensive = 2");
 	$nabor_count = sequery("SELECT COUNT(1) FROM catalog WHERE status != 0 AND intensive = 3");

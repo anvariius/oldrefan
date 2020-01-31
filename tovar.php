@@ -45,7 +45,7 @@ $zahod = query("INSERT INTO actions (action, product_id, ip) VALUES (:action, :p
 				</div>
 				<div class="text-group">
 					<p>Пол</p>
-					<h5><?php if($query['gender']=='0'){echo "Женский";}else{echo "Мужской";} ?></h5>
+					<h5><?php if($query['gender']=='0'){echo "Женский";}elseif($query['gender']=='1'){echo "Мужской";}elseif($query['gender']=='2'){echo "Unisex";} ?></h5>
 				</div>
 				<div class="text-group">
 					<p>Бренд</p>

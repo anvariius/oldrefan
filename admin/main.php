@@ -316,11 +316,17 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
   							<label class="form-check-label">
     							Мужской
   							</label>
-  						<div class="form-check">
-  						</div>	
+						</div>
+  						<div class="form-check">	
   							<input type="radio" class="form-check-input tovar-gender" name="gender" value="0" checked>
   							<label class="form-check-label">
     							Женский
+  							</label>
+  						</div>
+  						<div class="form-check">	
+  							<input type="radio" class="form-check-input tovar-gender" name="gender" value="2">
+  							<label class="form-check-label">
+    							Unisex
   							</label>
   						</div>
   						<div class="form-group mt-1">
