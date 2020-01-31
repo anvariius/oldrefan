@@ -125,14 +125,7 @@
 	}
 	</script>
 	<style>
-		* {
-		  -webkit-touch-callout: none;
-			-webkit-user-select: none;
-			 -khtml-user-select: none;
-			   -moz-user-select: none;
-				-ms-user-select: none;
-					user-select: none;
-		}
+		
 		#yt-widget .yt-servicelink{
 			display: none !important;
 		}
@@ -216,7 +209,7 @@
 
 
 </head>
-<body oncopy="return false;"> <!--    -->
+<body> <!--    -->
 	<!--Start of Tawk.to Script--> 
 	<script type="text/javascript"> 
 	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); 
