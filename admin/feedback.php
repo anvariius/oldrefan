@@ -1,7 +1,7 @@
 <?php
 include '../bt/pdo.php';
 include 'header.php';
-$fb_new = sequery("SELECT id,name,city,tovar,message,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 1");
+$fb_new = sequery("SELECT id,name,city,tovar,message,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 1 ORDER BY data DESC");
 $fb_old = sequery("SELECT id,name,city,tovar,message,answer,DATE_FORMAT(data,'%d.%m.%Y') AS data FROM feedback WHERE status = 2 ORDER BY data DESC");
 if (count($fb_new) == 0) {
 	$fb_new = false;
