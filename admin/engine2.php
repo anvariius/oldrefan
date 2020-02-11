@@ -180,6 +180,8 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 
 			$imgurl = 'mailimg.'.$type;
 			move_uploaded_file($_FILES['img']['tmp_name'], 'mailimg/'.$imgurl);
+			echo $imgurl.'<br>';
+			echo $_FILES['img']['tmp_name'];
 
 			$to = 'mail@bk.ru';
 			$subject = $name;
@@ -195,12 +197,12 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			</body>
 			</html>
 			';
-
+			
 			$query = sequery("SELECT email FROM emails WHERE status = 1");
 			if (!isset($query[0]['email'])) {
 				$query = array('1' => $query);
 			}
-
+			/*
 
 			foreach ($query as $v) {
 				$to = $v['email'];
@@ -210,10 +212,34 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 				$headers .= 'From: RefanParfum.lv <info@refanparfum.lv>' . "\r\n";
 				mail($to, $subject, $message, $headers);
 			}
+			*/
 
-			header("Location: main.php");
+			//header("Location: main.php");
 
 			//echo 'https://refanparfum.lv/mailimg/'.$imgurl;
+			echo "Подождите...";
+
+			foreach ($query as $v) {
+				$token = '6775g37nuu6w9ujwe5obojou84jhdgtdr8krkpcy';
+				$email = $v['email'];
+				$params = [
+					'format' => 'json',
+					'api_key' => $token,
+					'email' => $email,
+					'sender_name' => 'refanparfum',
+					'sender_email' => 'info@refanparfum.lv',
+					'subject' => $subject,
+					'body' => $message,
+					'list_id' => '19981550'
+				];
+
+				$get_params = http_build_query($params);
+				$result = json_decode(file_get_contents('https://api.unisender.com/ru/api/sendEmail?'. $get_params));
+				//print_r($result);
+			}
+
+
+			header("Location: main.php");
 			
 			break;
 		case 'send_smsing':
