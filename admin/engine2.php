@@ -1,4 +1,6 @@
 <?php
+ini_set('max_execution_time', 1600000);
+ini_set('memory_limit', '-1');
 include '../bt/pdo.php';
 if (isset($_GET['action'])) {
 	switch ($_GET['action']) {
@@ -193,7 +195,7 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			<body>
 			  <h1>'.$title.'</h1>
 			  <p>'.$text.'</p>
-			  <img src="https://refanparfum.lv/admin/mailimg/'.$imgurl.'" style="width: 80%;">
+			  <img src="https://refanparfum.lv/mailimg/'.$imgurl.'" style="width: 80%;">
 			</body>
 			</html>
 			';
@@ -217,7 +219,7 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			//header("Location: main.php");
 
 			//echo 'https://refanparfum.lv/mailimg/'.$imgurl;
-			echo "Подождите...";
+			echo "Подождите";
 
 			foreach ($query as $v) {
 				$token = '6775g37nuu6w9ujwe5obojou84jhdgtdr8krkpcy';
@@ -235,7 +237,7 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 
 				$get_params = http_build_query($params);
 				$result = json_decode(file_get_contents('https://api.unisender.com/ru/api/sendEmail?'. $get_params));
-				//print_r($result);
+				print_r($result);
 			}
 
 
