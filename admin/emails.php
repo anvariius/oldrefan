@@ -351,19 +351,6 @@ else{
 			location.reload();
 		}
 	});
-	$(document).mouseup(function (e){
-		var div = $(".emails-modal .modal-dialog");
-		if (!div.is(e.target) && div.has(e.target).length === 0 && isStarted == true) {
-			if (isend == false) {
-				if(confirm("Вы действительно хотите прервать рассылку?")){
-					location.reload();
-				}
-			}
-			else{
-				location.reload();
-			}
-		}
-	});
 
 
 
@@ -371,13 +358,13 @@ else{
 </script>
 
 
-<div class="modal emails-modal" tabindex="-1" role="dialog">
+<div class="modal emails-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Рассылка email</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true" class="brkk">&times;</span>
+				<button type="button" class="close">
+				<span class="brkk">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
@@ -399,7 +386,7 @@ else{
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-danger break-sending brkk" data-dismiss="modal">Прервать</button>
+				<button type="button" class="btn btn-danger break-sending brkk">Прервать</button>
 			</div>
 		</div>
 	</div>
