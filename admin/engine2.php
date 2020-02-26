@@ -274,17 +274,17 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			</html>
 			';
 
-			$token = '6qzj1f8hij9fyrf1fgtwb85bjdxkarkwdqehx3wo';
+			$token = '6775g37nuu6w9ujwe5obojou84jhdgtdr8krkpcy';
 			$email = $query['email'];
 			$params = [
 				'format' => 'json',
 				'api_key' => $token,
 				'email' => $email,
-				'sender_name' => 'Anvar',
-				'sender_email' => 'anvar8ku@gmail.com',
+				'sender_name' => 'refanparfum',
+				'sender_email' => 'info@refanparfum.lv',
 				'subject' => $subject,
 				'body' => $message,
-				'list_id' => '19962860'
+				'list_id' => '19981550'
 			];
 
 			$get_params = http_build_query($params);
