@@ -231,6 +231,7 @@ else{
 	let timerId;
 	var statline = $('.stats-table .statline').clone();
 	var isImg = 'false';
+	var img_name = '';
 
 	$('.mailimgg').change(function () {
 		isImg = 'true';
@@ -257,7 +258,8 @@ else{
 	        data: form_data,
 	        type: 'post',
 	        success: function(php_script_response){
-	            
+	            img_name = php_script_response;
+	            console.log(img_name);
 	        }
 	     });
 
@@ -308,7 +310,7 @@ else{
 			}
 
 			while(i < j){
-				$.post('engine2.php',{action:'sendEmailUni', token: '<?php echo $token2; ?>',email_id:checked_emails[i], name: eName.val(), title: eTitle.val(), text: eText.val(), isImg: isImg}, function (data) {
+				$.post('engine2.php',{action:'sendEmailUni', token: '<?php echo $token2; ?>',email_id:checked_emails[i], name: eName.val(), title: eTitle.val(), text: eText.val(), isImg: isImg,img_name: img_name}, function (data) {
 					data = JSON.parse(data);
 					var stts = "Отправлено";
 					if (data.result == '') {

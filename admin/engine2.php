@@ -2,6 +2,8 @@
 ini_set('max_execution_time', 1600000);
 ini_set('memory_limit', '-1');
 include '../bt/pdo.php';
+
+
 if (isset($_GET['action'])) {
 	switch ($_GET['action']) {
 		case 'set_sort':
@@ -249,6 +251,7 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			$name = $_POST['name'];
 			$title = $_POST['title'];
 			$isImg = $_POST['isImg'];
+			$img_name = $_POST['img_name'];
 			$text = nl2br($_POST['text']);
 
 			if($isImg=='false'){
@@ -260,6 +263,7 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 
 			$query = sequery("SELECT email FROM emails WHERE id =:email_id LIMIT 1", compact('email_id'));
 
+
 			$subject = $name;
 			$message = '
 			<html>
@@ -269,7 +273,7 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			<body>
 			  <h1>'.$title.'</h1>
 			  <p>'.$text.'</p>
-			  <img src="https://refanparfum.lv/admin/mailimg/mailimg.png" style="width: 80%;'.$isImg.'">
+			  <img src="https://refanparfum.lv/admin/mailimg/'.$img_name.'" style="width: 80%;'.$isImg.'">
 			</body>
 			</html>
 			';
@@ -293,15 +297,28 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 
 			echo json_encode($result);
 			break;	
+		
 		case 'uploadImageUni':
+			$str_characters = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+			$string = '';
+		    for ($i = 20; $i > 0; $i--){
+		        $string .= $str_characters[rand(0, 55)];
+		    }
+			$img_name = $string.'.png';
+
+
 			if ( 0 < $_FILES['file']['error'] ) {
 		        echo 'error';
 		    }
 		    else {
-		        move_uploaded_file($_FILES['file']['tmp_name'], 'mailimg/mailimg.png');
+		        move_uploaded_file($_FILES['file']['tmp_name'], 'mailimg/'.$img_name);
 		    }
 
-			break;	
+		    echo $img_name;
+
+			break;
+			
 		case 'send_smsing':
 			$message = $_POST['text'];
 			$query = sequery("SELECT phone FROM emails WHERE status = 1");
