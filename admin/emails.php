@@ -110,11 +110,43 @@ else{
 					  	</div>
 					  	<div class="form-group">
 						    <label>Изображение</label>
-						    <input type="file" name="img" accept="image/x-png,image/gif,image/jpeg" class="form-control-file">
+						    <input type="file" name="img" accept="image/x-png,image/gif,image/jpeg" class="form-control-file mailimgg">
 					    	<small class="form-text text-muted">Необязательно</small>
 					  	</div>
 					  	<div class="form-group">
-					  		<button type="submit" class="btn btn-primary btn-lg">Отправить</button>
+					  		<label>Список адресатов</label>
+					  		<?php $k = 0; if($query){ ?>
+					  		<div style="max-height:700px;height:auto;overflow-y:scroll;">	
+							<table class="table table-bordered">
+								<thead class="thead-dark">
+									<tr>
+										<th>№</th>
+										<th>Email</th>
+										<th>Выбрать</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td colspan="2">Выбрать все</td>
+										<td><input type="checkbox" class="check-all"></td>
+									</tr>
+									<?php foreach ($query as $v) { $k+=1; if($v['phone'] == ''){ $v['phone'] = 'не указано'; } ?>
+									<tr email-id="<?php echo $v['id']; ?>" class="email-card">
+										<td><?php echo $k; ?></td>
+										<td><p><?php echo $v['email']; ?></p></td>
+										<td><input type="checkbox" class="check-email"></td>
+									</tr>
+									<?php } ?>
+								</tbody>
+							</table>
+							</div>
+							<?php } ?>
+					  	</div>
+					  	<div class="form-group">
+					  		<label>Адресатов: <span class="email-count">0</span></label>
+					  	</div>
+					  	<div class="form-group">
+					  		<button type="button" class="btn btn-primary btn-lg send-email">Отправить</button>
 					  	</div>
 					</form>
 				</div>
@@ -178,6 +210,198 @@ else{
 	});
 
 	$(".new-phone").mask("+379  99999?999");
+
+
+	$('.check-all').click(function () {
+		if ($(this).is(':checked')) {
+			$('.check-email').prop('checked', true);
+		}
+		else{
+			$('.check-email').prop('checked', false);
+		}
+		
+	});
+	$('.check-all, .check-email').click(function () {
+		$('.email-count').text($('.check-email:checked').length);
+	});
+
+	var isend = false;
+	var isStarted = false;
+	var checked_emails = [];
+	let timerId;
+	var statline = $('.stats-table .statline').clone();
+	var isImg = 'false';
+
+	$('.mailimgg').change(function () {
+		isImg = 'true';
+	});
+
+	$('.send-email').click(function (e) {
+		e.preventDefault();
+
+		$('.mailing input, .mailing textarea').removeClass('is-invalid');
+		$('.email-count').parent().removeClass('text-danger');
+
+
+		var file_data = $('.mailimgg').prop('files')[0];
+	    var form_data = new FormData();
+	    form_data.append('file', file_data);
+	    form_data.append('action', 'uploadImageUni');
+	    form_data.append('token', '<?php echo $token2; ?>');
+	    $.ajax({
+	        url: 'engine2.php',
+	        dataType: 'text',
+	        cache: false,
+	        contentType: false,
+	        processData: false,
+	        data: form_data,
+	        type: 'post',
+	        success: function(php_script_response){
+	            
+	        }
+	     });
+
+
+		var formValid = true,
+			eName = $('.mailing input[name="name"]'),
+			eTitle = $('.mailing input[name="title"]'),
+			eText = $('.mailing textarea[name="text"]');
+		checked_emails = [];	
+
+
+		$('.check-email:checked').each(function () {
+			checked_emails.push($(this).closest('.email-card').attr('email-id'));
+		});
+		var emails_length = checked_emails.length;	
+		
+		if (eName.val() == '') {
+			eName.addClass('is-invalid');
+			formValid = false;
+		}
+		if (eText.val() == '') {
+			eText.addClass('is-invalid');
+			formValid = false;
+		}	
+		
+		if (emails_length == 0) {
+			$('.email-count').parent().addClass('text-danger');
+			formValid = false;
+		}
+
+		if(formValid == true){
+
+		
+		isStarted = true;
+		
+		var i = 0;
+		var j;
+		$('.etosend').text(emails_length);
+		$('.emails-modal').modal('show');
+
+		timerId = setInterval(function () {
+			isend = false;
+
+			j = i + 5;
+			if (j > emails_length) {
+				j = emails_length;
+				isend = true;
+			}
+
+			while(i < j){
+				$.post('engine2.php',{action:'sendEmailUni', token: '<?php echo $token2; ?>',email_id:checked_emails[i], name: eName.val(), title: eTitle.val(), text: eText.val(), isImg: isImg}, function (data) {
+					data = JSON.parse(data);
+					var stts = "Отправлено";
+					if (data.result == '') {
+						stts = "Ошибка";
+					}
+
+					$('.stats-table tbody').prepend('<tr class="statline"><td class="st_email">'+data.email+'</td><td class="st_status">'+stts+'</td></tr>');
+				});
+				i++;
+			}
+
+			$('.esended').text(i);
+			var valuenow = Math.ceil(i*100/emails_length);
+			if (valuenow>100) {valuenow = 100;}
+			$('.emails-modal .progress-bar').attr('aria-valuenow', valuenow);
+			$('.emails-modal .progress-bar').css('width',valuenow+'%');
+			$('.emails-modal .progress-bar').text(valuenow+'%');
+
+			if (isend == true) {
+				clearInterval(timerId);
+				
+				console.log('clearInterval');
+				$('.etext').text('Завершено');
+				$('.break-sending').removeClass('btn-danger').addClass('btn-primary').text("Закрыть");
+			}
+		}, 5000);
+
+		}
+		
+	});
+
+
+	$(document).on('click', '.brkk', function (e) {
+		if (isend == false) {
+			if(confirm("Вы действительно хотите прервать рассылку?")){
+				location.reload();
+			}
+		}
+		else{
+			location.reload();
+		}
+	});
+	$(document).mouseup(function (e){
+		var div = $(".emails-modal .modal-dialog");
+		if (!div.is(e.target) && div.has(e.target).length === 0 && isStarted == true) {
+			if (isend == false) {
+				if(confirm("Вы действительно хотите прервать рассылку?")){
+					location.reload();
+				}
+			}
+			else{
+				location.reload();
+			}
+		}
+	});
+
+
+
 			
 </script>
+
+
+<div class="modal emails-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Рассылка email</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true" class="brkk">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h4><span class="etext">В процессе</span> <span class="esended">0</span> / <span class="etosend"></span></h4>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+				<div style="height: auto; max-height: 400px; overflow-y: auto; margin-top: 20px;">
+					<table class="table stats-table">
+						<thead class="thead-light">
+							<tr>
+							<th scope="col">Email</th>
+							<th scope="col">Статус</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger break-sending brkk" data-dismiss="modal">Прервать</button>
+			</div>
+		</div>
+	</div>
+</div>
 <?php include 'footer.php'; ?>	

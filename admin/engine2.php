@@ -244,6 +244,64 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			header("Location: main.php");
 			
 			break;
+		case 'sendEmailUni':
+			$email_id = $_POST['email_id'];
+			$name = $_POST['name'];
+			$title = $_POST['title'];
+			$isImg = $_POST['isImg'];
+			$text = nl2br($_POST['text']);
+
+			if($isImg=='false'){
+				$isImg = "display: none;";
+			}
+			else{
+				$isImg = "";
+			}
+
+			$query = sequery("SELECT email FROM emails WHERE id =:email_id LIMIT 1", compact('email_id'));
+
+			$subject = $name;
+			$message = '
+			<html>
+			<head>
+			  <title>'.$title.'</title>
+			</head>
+			<body>
+			  <h1>'.$title.'</h1>
+			  <p>'.$text.'</p>
+			  <img src="https://refanparfum.lv/admin/mailimg/mailimg.png" style="width: 80%;'.$isImg.'">
+			</body>
+			</html>
+			';
+
+			$token = '6qzj1f8hij9fyrf1fgtwb85bjdxkarkwdqehx3wo';
+			$email = $query['email'];
+			$params = [
+				'format' => 'json',
+				'api_key' => $token,
+				'email' => $email,
+				'sender_name' => 'Anvar',
+				'sender_email' => 'anvar8ku@gmail.com',
+				'subject' => $subject,
+				'body' => $message,
+				'list_id' => '19962860'
+			];
+
+			$get_params = http_build_query($params);
+			$result = json_decode(file_get_contents('https://api.unisender.com/ru/api/sendEmail?'. $get_params));
+			$result->email = $email;
+
+			echo json_encode($result);
+			break;	
+		case 'uploadImageUni':
+			if ( 0 < $_FILES['file']['error'] ) {
+		        echo 'error';
+		    }
+		    else {
+		        move_uploaded_file($_FILES['file']['tmp_name'], 'mailimg/mailimg.png');
+		    }
+
+			break;	
 		case 'send_smsing':
 			$message = $_POST['text'];
 			$query = sequery("SELECT phone FROM emails WHERE status = 1");
