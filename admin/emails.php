@@ -259,7 +259,6 @@ else{
 	        type: 'post',
 	        success: function(php_script_response){
 	            img_name = php_script_response;
-	            console.log(img_name);
 	        }
 	     });
 

@@ -1,8 +1,8 @@
 <?php 
 	include 'bt/pdo.php';
-	ini_set('session.gc_maxlifetime', 0);
-	ini_set('session.cookie_lifetime', 0);
-	session_set_cookie_params(0); 
+	ini_set('session.gc_maxlifetime', 604800);
+	ini_set('session.cookie_lifetime', 604800);
+	session_set_cookie_params(604800); 
 	session_start();
 	if(!isset($_SESSION['basket'])) { //если не существует элемента массива 'basket'
 		$_SESSION['basket'] = array(); // то нужно его создать
