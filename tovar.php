@@ -1,16 +1,20 @@
 <?php 
 include 'header.php'; 
 $product_id = '';
-if (!isset($_GET['product-id']) || $_GET['product-id'] == '') {
-	die();
+if (isset($_GET['product-id']) && $_GET['product-id'] != '') {
+	$product_id = $_GET['product-id'];
+	$query=sequery("SELECT * FROM catalog WHERE id = $product_id AND status != 0 LIMIT 1");
+}
+elseif (isset($_GET['refan']) && $_GET['refan'] != '') {
+	$refan = $_GET['refan'];
+	$query=sequery("SELECT * FROM catalog WHERE refan = $refan AND status != 0 LIMIT 1");
+	$product_id = $query['id'];
 }
 else{
-	$product_id = $_GET['product-id'];
-	$query = sequery("SELECT * FROM catalog WHERE id = $product_id AND status != 0 LIMIT 1");
-	if (empty($query)) {
-		die();
-	}
-
+	die();
+}
+if (empty($query)) {
+	die();
 }
 $allmaxid = sequery("SELECT MAX(id) FROM catalog WHERE status != 0");
 $allmaxid = $allmaxid['MAX(id)'];
