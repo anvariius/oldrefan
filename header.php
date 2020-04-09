@@ -451,6 +451,7 @@
 				<li><a href="automat.php">ТОРГОВЫЕ АВТОМАТЫ</a></li>
 				<li><a href="feedback.php">Отзывы</a></li>
 				<li><a href="catalog.php?category=nabor">Парфюмерные наборы</a></li>
+				<li><a href="kosmetica.php">Косметика</a></li>
 			</div>
 			<li><a href="about.php">О НАС</a></li>
 			<li><a href="dostavka.php">ИНФОРМАЦИЯ О ДОСТАВКЕ</a></li>
