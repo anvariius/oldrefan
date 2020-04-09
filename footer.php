@@ -16,7 +16,7 @@
 					<div class="img-wrap"><img src="img/2i.png" alt=""></div>
 					<div class="descr">
 						<h4>Курьерская экспресс доставка</h4>
-						<p>по всей Латвии</p>
+						<p>по странам Балтии</p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 flex align-items-start justify-content-start">
@@ -86,8 +86,8 @@
 					</ul>
 					<div class="sponsors flex justify-content-center mbb20">
 						<img src="img/visamastercard.png" alt="">
-						<img src="img/dpd.png" alt="">
-						<img src="img/omniva.png" alt="">
+						<!--<img src="img/dpd.png" alt="">-->
+						<a href="https://www.omniva.lv/"><img src="img/omniva.png" alt=""></a>
 						<a href="https://www.kurpirkt.lv" title="Visi Internetveikali un cenas">
 							<img style="Border:none;" alt="Visi Internetveikali un cenas"
 							src="//www.kurpirkt.lv/media/kurpirkt88.gif" width=88 height=31>
@@ -98,13 +98,23 @@
 				<div class="col-md-3">
 					<div class="social flex justify-content-lg-end justify-content-center mbb20">
 						<div>
-							<img src="img/whatsapp-icon.png" class="hoverimg" alt="">
-							<img src="img/whatsapp-icon-hover.png" class="hoverimg-hidden" alt="">
+							<!--<img src="img/whatsapp-icon.png" class="hoverimg" alt="">
+							<img src="img/whatsapp-icon-hover.png" class="hoverimg-hidden" alt="">-->
+							<a href="https://api.whatsapp.com/send?phone=37129552156" target="_blank">
+							<img src="img/whatsapp-icon.png" class="hoverimg" alt="" style="">
+							<img src="img/whatsapp-icon-hover.png" class="hoverimg-hidden" alt="" style="display: none;">
+							</a>
 						</div>
 						<div>
 							<img src="img/facebook-icon.png" class="hoverimg" alt="">
-							<img src="img/facebook-icon-hover.png" class="hoverimg-hidden" alt="">
-						</div>	
+							<!--<img src="img/facebook-icon-hover.png" class="hoverimg-hidden" alt="">-->
+							<a href="https://www.facebook.com/refanparfum.lv/" class="hoverimg-hidden" style="display: none;"><img src="img/facebook-icon-hover.png" alt=""></a>
+						</div>
+						<div>
+							<img src="img/odnoklasniki_icon.png" class="hoverimg" alt="">
+							<!--<img src="img/facebook-icon-hover.png" class="hoverimg-hidden" alt="">-->
+							<a href="https://ok.ru/profile/579869452524" class="hoverimg-hidden" style="display: none;"><img src="img/odnoklasniki_icon.png" alt=""></a>
+						</div>
 					</div>
 					<div class="flex justify-content-lg-end justify-content-center mbb20">
 						<a href="tel:+37129552156" class="contact-phone"><img src="img/phone-icon.png" alt="">+371 2955 2156</a>
@@ -117,7 +127,7 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					<p class="copyright">©2019 RefanParfum - Официальный онлайн бутик аналоговой парфюмерии REFAN в Прибалтике</p>
+					<p class="copyright">©2020 RefanParfum - Официальный онлайн бутик аналоговой парфюмерии REFAN в странах Балтии</p>
 				</div>
 			</div>
 		</div>
@@ -746,5 +756,15 @@ var hash_phone;
 		$('main').css('height', content_block+'px');
 	}
 	*/
+
+	$('[linkto]').click(function (e) {
+		e.preventDefault();
+		if ($(this).attr('newtab')) {
+			window.open($(this).attr('linkto'));
+		}
+		else{
+			location.href = $(this).attr('linkto');
+		}
+	});
 </script>
 </html>

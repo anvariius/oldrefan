@@ -1,6 +1,6 @@
 <?php 
 include 'header.php';
-$query1 = sequery("SELECT * FROM catalog WHERE status != 0 AND novinka = 1 ORDER BY id DESC LIMIT 4");
+$query1 = sequery("SELECT * FROM catalog WHERE status != 0 AND intensive !=4 AND novinka = 1 ORDER BY id DESC LIMIT 4");
 $query3 = sequery("SELECT * FROM catalog WHERE intensive = 1 AND status != 0 ORDER BY id DESC LIMIT 4");
 $popular = sequery("SELECT product_id, COUNT(product_id) FROM actions WHERE action = 0 AND status != 0 GROUP BY product_id ORDER BY COUNT(product_id) DESC LIMIT 4");
 $hits = sequery("SELECT product_id, COUNT(product_id) FROM actions WHERE action = 1 AND status != 0 GROUP BY product_id ORDER BY COUNT(product_id) DESC LIMIT 4");
@@ -8,11 +8,11 @@ $query2 = [];
 $query4 = [];
 foreach ($popular as $v) {
 	$product_id = $v['product_id'];
-	array_push($query4, sequery("SELECT * FROM catalog WHERE status != 0 AND id = :product_id", compact('product_id'))); 
+	array_push($query4, sequery("SELECT * FROM catalog WHERE status != 0 AND intensive !=4 AND id = :product_id", compact('product_id'))); 
 }
 foreach ($hits as $v) {
 	$product_id = $v['product_id'];
-	array_push($query2, sequery("SELECT * FROM catalog WHERE status != 0 AND id = :product_id", compact('product_id'))); 
+	array_push($query2, sequery("SELECT * FROM catalog WHERE status != 0 AND intensive != 4 AND id = :product_id", compact('product_id'))); 
 }
 
 $brands = sequery("SELECT * FROM brands WHERE status = 1");

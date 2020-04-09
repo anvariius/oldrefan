@@ -5,7 +5,7 @@
 	<div class="info">
 		<div class="row">
 			<div class="col-md-7">
-				<p>НАШ МАГАЗИН ОСУЩЕСТВЛЯЕТ ЭКСПРЕСС-КУРЬЕРСКУЮ ДОСТАВКУ ПАРФЮМА ПО ВСЕЙ ПРИБАЛТИКЕ И ЕВРОПЕ <span>ПРЯМО ВАМ В РУКИ</span> И ДОСТАВКУ В <span>ПАКОМАТЫ OMNIVA</span></p>
+				<p>НАШ МАГАЗИН ОСУЩЕСТВЛЯЕТ ЭКСПРЕСС-КУРЬЕРСКУЮ ДОСТАВКУ ПАРФЮМА ПО ВСЕМ СТРАНАМ БАЛТИИ И ЕВРОПЕ <span>ПРЯМО ВАМ В РУКИ</span> И ДОСТАВКУ В <span>ПАКОМАТЫ OMNIVA</span></p>
 				<p>
 					Сроки доставки
 					<br>
@@ -23,7 +23,7 @@
 
 			</div>
 			<div class="col-md-5">
-				<img src="img/delivery.png" alt="">
+				<img src="img/pakomats.jpg" alt="">
 			</div>
 		</div>
 	</div>	

@@ -41,10 +41,18 @@ $tovar = sequery("SELECT * FROM catalog WHERE id = 58 AND status = 1 AND intensi
 						</tr>
 					</thead>
 					<tbody>
-						<?php if ($query != false) { foreach ($query as $v) { ?>
+						<?php 
+						if ($query != false) { foreach ($query as $v) {
+							if ($v['intensive'] == 4) {
+							 	$v['fullname'] = $v['name']." ".$v['serie'];
+							}else{
+								$v['fullname'] = 'refan '.$v['refan']." ".getGender($v['gender'])." ".$v['volume']."ML";
+							}
+							
+						?>
 						<tr product_id="<?php echo $v['id']; ?>">
 							<td><div class="img-block" style="background-image: url(catalog/<?php echo $v['img_url']; ?>);"></div></td>
-							<td>refan <?php echo $v['refan']; ?> <?php echo getGender($v['gender']); ?> <?php if($volume !='') echo $v['volume']."ML"; ?></td>
+							<td><?php echo $v['fullname'] ?></td>
 							<td>
 								<input type="number" class="numoftovar" min="1" max="20" value="1">
 								<img src="img/refresh.png" class="refresh-product" alt="">

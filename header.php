@@ -32,7 +32,7 @@
   	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-  	<title>RefanParfum - Болгарский Парфюм.Ароматы мировых брендов.Доставка по всей Латвии.</title>
+  	<title>RefanParfum - Болгарский Парфюм.Ароматы мировых брендов.Доставка по странам Балтии.</title>
   	<link rel="stylesheet" href="css/style.css">
   	<link rel="stylesheet" href="css/bootstrap.min.css">
   	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -465,8 +465,9 @@
 	<div class="sidebar contacts">
 		<ul>
 			<li class="sidebar-title"><a href="">Контакты</a><span class="close-sidebar" aria-hidden="true">×</span></li>
-			<li><h4>Адрес<img src="img/location.png" alt=""></h4><a href="">Rīga, Aleksandra Čaka ielā 33</a></li>
-			<li><h4>ТЕЛЕФОН</h4><a href="tel:+37129552156">+371 2955 2156</a></li>
+			<li><h4>Название фирмы</h4><a href="">SIA "ELPARKS"</a></li>
+			<li><h4>ТЕЛЕФОН</h4><a href="tel:+37129552156">+371 2955 2156</a><br><a href="tel:+37124606846">+371 2460 6846</a></li>
+			<li><h4>Эл.почта</h4><a href="mailto:info@refanparfum.lv">info@refanparfum.lv</a></li>
 			<li><h4>ВРЕМЯ РАБОТЫ</h4><a href="">С пОНЕДЕЛЬНИКА по пЯТНИЦУ<br>с 9:00 до 19:00<br>*Заявки на сайте принимаются круглосуточно</a></li>
 			<button class="zakaz-consult" onclick="openModal('.consult')">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
 		</ul>
@@ -478,6 +479,7 @@
 				<li><a href="#" onclick="toPage('pokupka.php');">оформить покупку</a></li>
 				<li><a href="#" onclick="openModal('.consult')">консультация</a></li>
 				<li><a href="tel:+37129552156"><i class="fa fa-phone" aria-hidden="true"></i>+371 2955 2156</a></li>
+				<li><a href="tel:+37124606846"><i class="fa fa-phone" aria-hidden="true"></i>+371 2460 6846</a></li>
 				<li><a href="mailto:info@refanparfum.lv"><i class="fa fa-envelope" aria-hidden="true"></i>info@refanparfum.lv</a></li>
 				<!-- <li class="translated"><div id="ytWidget"></div><script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=ru&widgetTheme=dark&autoMode=true" type="text/javascript"></script></li> -->
 				<!-- <li class="translated">
@@ -558,10 +560,11 @@
 			<li><a href="automat.php">ТОРГОВЫЕ АВТОМАТЫ</a></li>
 			<li><a href="feedback.php">Отзывы</a></li>
 			<li><a href="catalog.php?category=nabor" class="podsvetka">Парфюмерные наборы</a></li>
+			<li><a href="kosmetica.php">Косметика</a></li>
 		</ul>
 	</nav>
 	<section class="sale-line">
-		<h3><span>специальное предложение!</span> бесплатная доставка в пакоматы omniva при заказе от 30€ по Латвии! <span>От 50€ по Литве и Эстонии!</span> Доставка по прибалтике в течении 2х рабочих дней!<br><a href="https://parfumanalog.ru" target="blank">www.parfumanalog.ru</a></h3>
+		<h3><span>специальное предложение!</span> бесплатная доставка в пакоматы omniva при заказе от 30€ по Латвии! <span>От 50€ по Литве и Эстонии!</span> Доставка по странам Балтии в течении 2х-3х рабочих дней!<br><a href="https://parfumanalog.ru" target="blank">www.parfumanalog.ru</a></h3>
 	</section>
 	<main>
 		<div class="container">

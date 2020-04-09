@@ -45,6 +45,8 @@ elseif (!isset($query[0]['id'])) {
 			</div>
 			<div class="col-md-8 flex align-items-center">
 				<div>
+					<h4>Пошаговая инструкция по работе с торговым автоматом</h4>
+					<a href="ta_instrukcija.php">refanparfum.lv/ta_instrukcija.php</a>
 					<h4>Ассортимент торговых автоматов находится на странице</h4>
 					<a href="assortiment.php">refanparfum.lv/assortiment.php</a>
 				</div>

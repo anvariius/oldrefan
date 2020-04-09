@@ -32,6 +32,17 @@ switch ($category) {
 		$query = sequery("SELECT * FROM catalog WHERE status = 1 AND intensive = 3");
 		$qtext = 'Наборы';				
 		break;
+	case 'kosmetica':
+		$kosmetic_type = "";
+		$qtext = 'Косметика';
+		$gcosmetic = $_GET['kosmetic_type'];
+		if (isset($_GET['kosmetic_type'])) {
+			$kosmetic_type = " AND kosmetic_type=".$_GET['kosmetic_type'];
+			$qtext = sequery('SELECT name FROM kosmetica WHERE id=:gcosmetic LIMIT 1', compact('gcosmetic'));
+			$qtext = $qtext['name'];
+		}
+		$query = sequery("SELECT * FROM catalog WHERE status = 1 AND intensive = 4".$kosmetic_type);			
+		break;
 	case 'womans':
 		$query = sequery("SELECT * FROM catalog WHERE status = 1 AND intensive = 0 AND gender = 0");
 		$qtext = 'Женские';				
@@ -135,6 +146,7 @@ else{
 
 
 $brands = sequery("SELECT * FROM brands WHERE status = 1");
+$kosmetica = sequery("SELECT * FROM kosmetica");
 ?>
 	<div class="container">
 		<div class="row">
@@ -146,6 +158,7 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 			      	<a class="nav-link <?php if($category == 'accs'){echo 'active';} ?>" href="main.php?category=accs">аксессуары</a>
 			      	<a class="nav-link <?php if($category == 'nabor'){echo 'active';} ?>" href="main.php?category=nabor">парфюмерные наборы</a>
 			      	<a class="nav-link <?php if($category == 'probniki'){echo 'active';} ?>" href="?category=probniki">пробники</a>
+			      	<a class="nav-link <?php if($category == 'kosmetica'){echo 'active';} ?>" href="?category=kosmetica">Косметика</a>
 			      	<a class="nav-link <?php if($category == 'brands' || $category == 'brand-id'){echo 'active';} ?>" href="main.php?category=brands">бренды</a>
 			      	<a class="nav-link <?php if($category == 'removed'){echo 'active';} ?>" href="main.php?category=removed">Удаленные товары</a>
 			      	<a class="nav-link <?php if($category == 'soldout'){echo 'active';} ?>" href="?category=soldout">Распродано</a>
@@ -172,8 +185,20 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 					</div>	
 				<?php }else{ if($query){ ?>
 				<div class="row">
-					<div class="col-md-9">
+					<div class="col-md-6">
 						<h3 class="text-left mb-5"><?php echo $qtext; ?></h3>
+					</div>
+					<div class="col-md-3">
+						<?php if($_GET['category'] == 'kosmetica'){ ?>
+						<div class="btn-group">
+						  	<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Тип косметики</button>
+						  	<div class="dropdown-menu">
+						  		<?php foreach ($kosmetica as $v) { ?>
+							    <a class="dropdown-item" href="main.php?category=kosmetica&kosmetic_type=<?php echo $v['id']; ?>"><?php echo $v['name'] ?></a>
+								<?php } ?>
+						  	</div>
+						</div>
+						<?php } ?>
 					</div>
 					<div class="col-md-3">
 						<div class="btn-group set-sort">
@@ -195,6 +220,8 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 					  	<div class="card-body">
 					  		<input type="hidden" class="product-brand" value='<?php echo $v['brand']; ?>'>
 					  		<input type="hidden" class="product-name" value='<?php echo $v['name']; ?>'>
+					  		<input type="hidden" class="product-kosmetica" value='<?php echo $v['kosmetic_type']; ?>'>
+					  		<input type="hidden" class="product-serie" value='<?php echo $v['serie']; ?>'>
 					  		<input type="hidden" class="product-refan" value='<?php echo $v['refan']; ?>'>
 					  		<input type="hidden" class="product-volume" value='<?php echo $v['volume']; ?>'>
 					  		<input type="hidden" class="product-descr" value='<?php echo  str_replace("<br />", "", $v['descr']); ?>'>
@@ -207,8 +234,13 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 					  		<input type="hidden" class="product-middlenotes" value='<?php echo $v['middlenotes']; ?>'>
 					  		<input type="hidden" class="product-bottomnotes" value='<?php echo $v['bottomnotes']; ?>'>
 					  		<input type="hidden" class="product-novinkin" value='<?php echo $v['novinka']; ?>'>
+					  		<?php if($v['intensive'] != 4){ ?>
 					    	<h5 class="card-title">Refan <?php echo $v['refan']; ?></h5>
 					    	<p class="card-text"><?php echo getBrand($v['brand']); ?></p>
+					    	<?php }else{ ?>
+				    		<p class="card-title"><?php echo $v['name']; ?></p>
+					    	<p class="card-text"><?php echo $v['serie']; ?></p>
+					    	<?php } ?>
 					    	<span class="badge badge-primary" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  str_replace("<br />", "", $v['descr']); ?>" style="cursor: pointer;">Описание</span>
 					    	<p class="card-text font-weight-bold"><?php echo $v['price']; ?> €</p>
 					    	<?php if($category != 'removed'){ ?>
@@ -221,7 +253,39 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 					</div>
 				</div>
 				<?php } }else{ ?>
-				<h3 class="text-center">Ничего не найдено</h3>
+					<div class="row">
+					<div class="col-md-6">
+						<h3 class="text-left mb-5"><?php echo $qtext; ?></h3>
+					</div>
+					<div class="col-md-3">
+						<?php if($_GET['category'] == 'kosmetica'){ ?>
+						<div class="btn-group">
+						  	<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Тип косметики</button>
+						  	<div class="dropdown-menu">
+						  		<?php foreach ($kosmetica as $v) { ?>
+							    <a class="dropdown-item" href="main.php?category=kosmetica&kosmetic_type=<?php echo $v['id']; ?>"><?php echo $v['name'] ?></a>
+								<?php } ?>
+						  	</div>
+						</div>
+						<?php } ?>
+					</div>
+					<div class="col-md-3">
+						<div class="btn-group set-sort">
+						  	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['sort_text']; ?></button>
+						  	<div class="dropdown-menu">
+							    <a class="dropdown-item" href="new">Сначала новые</a>
+							    <a class="dropdown-item" href="old">Сначала старые</a>
+							    <a class="dropdown-item" href="refanup">Refan по возрастанию</a>
+							    <a class="dropdown-item" href="refandown">Refan по убыванию</a>				    
+						  	</div>
+						</div>
+					</div>
+				</div> 
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="text-center">Ничего не найдено</h3>
+					</div>
+				</div>
 				<?php } } ?>	
 				</div>
 			</div>
@@ -249,6 +313,15 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
         						<option value="1">Пробник</option>
         						<option value="2">Аксессуар</option>
         						<option value="3">Парфюмерный набор</option>
+        						<option value="4">Косметика</option>
+        					</select>
+        				</div>
+        				<div class="form-group">
+        					<label class="font-weight-bold">Тип косметики</label>
+        					<select name="kosmetic_type" class="tovar-kosmetica form-control">
+        						<?php foreach ($kosmetica as $v) { ?>
+        							<option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
+        						<?php } ?>
         					</select>
         				</div>
   						<div class="form-group">
@@ -257,7 +330,11 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
   						</div>
   						<div class="form-group">
     						<label class="font-weight-bold">Refan</label>
-    						<input type="text" name="refan" required="" class="form-control tovar-refan" placeholder="Введите refan">
+    						<input type="text" name="refan" class="form-control tovar-refan" placeholder="Введите refan">
+  						</div>
+  						<div class="form-group">
+    						<label class="font-weight-bold">Серия товара</label>
+    						<input type="text" name="serie" class="form-control tovar-serie" placeholder="Введите refan">
   						</div>
   						<div class="form-group">
     						<label class="font-weight-bold">Обьем</label>
@@ -305,7 +382,7 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
   						<div class="form-group">
     						<label class="font-weight-bold">Цена товара</label>
     						<div class="input-group">
-    							<input type="number" name="price" required="" class="form-control tovar-price" placeholder="Введите цену">
+    							<input type="text" name="price" required="" class="form-control tovar-price" placeholder="Введите цену">
 	    						<div class="input-group-append">
 						          	<div class="input-group-text font-weight-bold">€</div>
 						        </div>
@@ -396,6 +473,7 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 			$('.tovar-modal .modal-title').text('Добавить товар');
 			$('.tovar-modal .tovar-name').val('');
 			$('.tovar-modal .tovar-refan').val('');
+			$('.tovar-modal .tovar-serie').val('');
 			$('.tovar-modal .tovar-volume').val('');
 			$('.tovar-modal .tovar-descr').val('');
 			$('.tovar-modal .tovar-aromagroup').val('');
@@ -410,13 +488,18 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 			$(".tovar-modal .tovar-brand option[value='1']").attr('selected','selected');
 			$('.tovar-modal .tovar-price').val('');
 			$('.tovar-modal .tovar-gender[value="0"]').attr('checked',true);
-			$(".tovar-intensive [value='0']").attr('selected', 'selected');
+			$(".tovar-modal .tovar-intensive option[value='0']").attr('selected', 'selected');
+			$(".tovar-modal .tovar-kosmetica option[value='1']").attr('selected', 'selected');
 			$('.product-id').val('');
 			$('.soldout').hide();
 			$('.novinkin input').attr('checked','true');
+
+			$('.tovar-intensive').trigger('change');
 		}
 		else if(action == 'change_tovar'){
 			var name = element.find('.product-name').val(),
+			kosmetic_type = element.find('.product-kosmetica').val(),
+			serie = element.find('.product-serie').val(),
 			refan = element.find('.product-refan').val(),
 			volume = element.find('.product-volume').val(),
 			descr = element.find('.product-descr').val(),
@@ -435,6 +518,8 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 			$('.tovar-modal input[name="action"]').val('change_tovar');
 			$('.tovar-modal input[name="token"]').val('<?php echo $token2; ?>');
 			$('.tovar-modal .tovar-name').val(name);
+			$('.tovar-modal .tovar-serie').val(serie);
+			$('.tovar-modal .tovar-kosmetica').val(kosmetic_type);
 			$('.tovar-modal .tovar-refan').val(refan);
 			$('.tovar-modal .tovar-volume').val(volume);
 			$('.tovar-modal .tovar-descr').val(descr);
@@ -469,25 +554,37 @@ $brands = sequery("SELECT * FROM brands WHERE status = 1");
 
 
 		}
-		if ($(".tovar-intensive option:selected").val() == 0 || $(".tovar-intensive option:selected").val() == 1) {
-			$('.aroma-params').show();
-		}
-		else{
-			$('.aroma-params').hide();
-			$('.aroma-params input').val('');
-		}
+		$('.tovar-intensive').trigger('change');
 		$('.tovar-modal').modal('show');
 		
 	}
 
 	
 	$('.tovar-intensive').change(function(event) {
+		if($(".tovar-modal .tovar-intensive option:selected").val()=='4'){
+			$('.tovar-refan').closest('.form-group').hide();
+			$('.tovar-brand').closest('.form-group').hide();
+			$('.aroma-params').hide();
+
+			$('.tovar-kosmetica').closest('.form-group').show();
+			$('.tovar-serie').closest('.form-group').show();
+		}
+		else{
+			$('.tovar-refan').closest('.form-group').show();
+			$('.tovar-brand').closest('.form-group').show();
+			$('.aroma-params').show();
+
+			$('.tovar-kosmetica').closest('.form-group').hide();
+			$('.tovar-serie').closest('.form-group').hide();
+		}
+
 		if ($(".tovar-intensive option:selected").val() == 0 || $(".tovar-intensive option:selected").val() == 1) {
 			$('.aroma-params').show();
 		}
 		else{
 			$('.aroma-params').hide();
 		}
+
 	});
 
 	$('.card a').click(function(event) {

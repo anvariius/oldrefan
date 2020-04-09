@@ -27,7 +27,15 @@
 			case 'accs':
 				$query = sequery("SELECT * FROM catalog WHERE status != 0 AND intensive = 2");
 				$category = 'accs';
-				break;	
+				break;
+			case 'kosmetica':
+				$kosmetic_type = 1;
+				if (isset($_GET['kosmetic_type'])) {
+					$kosmetic_type = $_GET['kosmetic_type'];
+				}
+				$query = sequery("SELECT * FROM catalog WHERE status!=0 AND intensive=4 AND kosmetic_type=:kosmetic_type",compact('kosmetic_type'));
+				$category = 'kosmetica';
+				break;		
 			case 'nabor':
 				$query = sequery("SELECT * FROM catalog WHERE status != 0 AND intensive = 3");
 				if (isset($_GET['gender'])) {
@@ -59,6 +67,8 @@
 	$nabor1_count = sequery("SELECT COUNT(1) FROM catalog WHERE status != 0 AND intensive = 3 AND gender = 1");
 	$brands = sequery("SELECT * FROM brands WHERE status != 0");
 	$brands_count = sequery("SELECT COUNT(1) FROM brands WHERE status != 0");
+
+	$kosmetic_count = sequery("SELECT COUNT(1) FROM catalog WHERE intensive = 4 AND status != 0");
 
 	$allmaxid = sequery("SELECT MAX(id) FROM catalog WHERE status != 0");
 	$allmaxid = $allmaxid['MAX(id)'];
@@ -150,6 +160,11 @@
 			</td>
 		</tr>
 		<tr>
+			<td>
+				<a href="kosmetica.php" class="razdel withhref <?php if($category=='kosmetica'){echo 'active';} ?>">Косметика (<span><?php echo $kosmetic_count['COUNT(1)']; ?></span>)</a>
+			</td>
+		</tr>
+		<tr>
 			<td style="border-bottom: none;" class="full">
 				<div style="min-height: 400px;"></div>
 			</td>
@@ -183,7 +198,9 @@
 		<a class="col-md-4 product-block product-card" product_id="<?php echo $v['id']; ?>" refan="<?php echo $v['refan']; ?>" category="<?php echo $v['gender']; ?>">
 			<div class="product-img" style="background-image: url(catalog/<?php echo $v['img_url']; ?>);">
 				<div class="top-block">
+					<?php if ($category!='kosmetica'){ ?>
 					<img src="img/intensive.png" class="intensive" alt="" data-toggle="tooltip" data-placement="bottom" data-original-title="Парфюмерная вода. Очень высокая стойкость аромата. Приятный шлейф. Более высокая концетрация ароматических масел в отличии от EDT">
+					<?php } ?>
 					<?php if ($v['status'] == 2) { ?>
 						<span class="rasprodano">Распродано</span>
 					<?php } ?>
@@ -194,9 +211,14 @@
 				</div>
 				<?php } ?>
 			</div>
+			<?php if ($category!='kosmetica'){ ?>
 			<h4 class="product-name">REFAN <span><?php echo $v['refan']; ?></span></h4>
 			<h5 class="product-gender"><?php echo getGender($v['gender']); ?> <?php if($v['volume'] !='') echo $v['volume']."ML"; ?></h5>
 			<p class="product-descr">www.parfumanalog.ru</p>
+			<?php }else{ ?>
+			<h4 class="product-name1"><?php echo $v['name']; ?></h4>
+			<h5 class="product-gender1"><?php echo $v['serie']; ?></h5>
+			<?php } ?>
 			<p class="product-price">€<?php echo $v['price']; ?></p>
 			<button class="product-opisanie" data-toggle="tooltip" data-placement="top" data-original-title='<?php echo str_replace("<br />", "", $v['descr']); ?>'>Описание товара</button>
 			<button class="add-product">ДОБАВИТЬ В КОРЗИНУ</button>

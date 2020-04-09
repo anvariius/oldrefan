@@ -44,17 +44,26 @@ $zahod = query("INSERT INTO actions (action, product_id, ip) VALUES (:action, :p
 				<img src="catalog/<?php echo $query['img_url']; ?>" alt="">
 			</div>
 			<div class="col-md-6">
+				<?php if($query['intensive'] == 4){ ?>
+				<div class="text-group">
+					<h4><?php echo $query['name'] ?></h4>	
+					<h5><?php echo $query['serie'] ?></h5>	
+				</div>
+				<?php }else{ ?>	
 				<div class="text-group">
 					<h2>REFAN <strong><?php echo $query['refan']; ?></strong></h2>	
 				</div>
+				<?php } ?>
 				<div class="text-group">
 					<p>Пол</p>
 					<h5><?php if($query['gender']=='0'){echo "Женский";}elseif($query['gender']=='1'){echo "Мужской";}elseif($query['gender']=='2'){echo "Unisex";} ?></h5>
 				</div>
+				<?php if($query['intensive'] != 4){ ?>
 				<div class="text-group">
 					<p>Бренд</p>
 					<h5><a href="https://parfumanalog.ru/tovar.php?refan=<?php echo $query['refan']; ?>" target="_blank">REFAN</a></h5>
 				</div>	
+				<?php } ?>
 				<?php if($volume != ''){ ?>
 				<div class="text-group">
 					<p>Объём</p>
@@ -73,7 +82,7 @@ $zahod = query("INSERT INTO actions (action, product_id, ip) VALUES (:action, :p
 				</div>								
 			</div>
 		</div>
-		<?php if($query['aromagroup'] != ''){ ?>
+		<?php if($query['aromagroup'] != '' && $query['intensive'] != 4){ ?>
 		<div class="row mt-3">
 			<div class="col-md-6">
 				<img src="img/piramida.png" style="border-left: none;" alt="">
