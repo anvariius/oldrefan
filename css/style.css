@@ -749,7 +749,8 @@ footer .copyright{
 .products .product-name1, .podarki .product-name1{
 	color: #000000;
 	font-family: Montserrat;
-	font-size: 18px;
+	font-size: 15px;
+	height: 60px;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-top: 15px;
@@ -759,7 +760,8 @@ footer .copyright{
 .products .product-gender1, .podarki .product-gender1{
 	color: #000000;
 	font-family: Montserrat;
-	font-size: 16px;
+	font-size: 15px;
+	height: 40px;
 	font-weight: 700;
 	text-transform: uppercase;
 }

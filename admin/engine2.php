@@ -48,6 +48,7 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			$refan = $_POST['refan'];
 			$kosmetic_type = $_POST['kosmetic_type'];
 			$serie = $_POST['serie'];
+			$stock = $_POST['stock'];
 			$volume = $_POST['volume'];
 			$descr = nl2br($_POST['descr']);
 			$brand = $_POST['brand'];
@@ -68,8 +69,8 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			$maxid = (int)$maxid['id'] + 1;
 			$type = substr($_FILES['img']['type'], 6);
 			$img_url = $maxid.'.'.$type;
-			$query = query("INSERT INTO catalog (name, refan, kosmetic_type, serie, volume, descr, brand, aromagroup, year, topnotes, middlenotes, bottomnotes, gender, img_url, intensive, price, novinka) VALUES (:name, :refan, :kosmetic_type, :serie, :volume, :descr, :brand, :aromagroup, :year, :topnotes, :middlenotes, :bottomnotes, :gender, :img_url, :intensive, :price, :novinka)",
-					compact('name', 'refan', 'kosmetic_type', 'serie', 'volume', 'descr', 'brand', 'aromagroup', 'year', 'topnotes', 'middlenotes', 'bottomnotes', 'gender', 'img_url', 'intensive', 'price', 'novinka'));
+			$query = query("INSERT INTO catalog (name, refan, kosmetic_type, serie, stock, volume, descr, brand, aromagroup, year, topnotes, middlenotes, bottomnotes, gender, img_url, intensive, price, novinka) VALUES (:name, :refan, :kosmetic_type, :serie, :stock, :volume, :descr, :brand, :aromagroup, :year, :topnotes, :middlenotes, :bottomnotes, :gender, :img_url, :intensive, :price, :novinka)",
+					compact('name', 'refan', 'kosmetic_type', 'serie', 'stock', 'volume', 'descr', 'brand', 'aromagroup', 'year', 'topnotes', 'middlenotes', 'bottomnotes', 'gender', 'img_url', 'intensive', 'price', 'novinka'));
 
 			move_uploaded_file($_FILES['img']['tmp_name'], '../catalog/'.$img_url);
 			header('Location: main.php');
@@ -108,6 +109,7 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			$refan = $_POST['refan'];
 			$kosmetic_type = $_POST['kosmetic_type'];
 			$serie = $_POST['serie'];
+			$stock = $_POST['stock'];
 			$descr = nl2br($_POST['descr']);
 			$brand = $_POST['brand'];
 			$volume = $_POST['volume'];
@@ -132,10 +134,10 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			 	$type = substr($_FILES['img']['type'], 6);	
 			 	$img_url = $id.'.'.$type;
 			 	move_uploaded_file($_FILES['img']['tmp_name'], '../catalog/'.$img_url);
-			 	$query = query("UPDATE catalog SET name = :name, refan = :refan, kosmetic_type=:kosmetic_type, serie=:serie, volume = :volume, descr = :descr, brand =:brand, aromagroup =:aromagroup, year =:year, topnotes =:topnotes, middlenotes =:middlenotes, bottomnotes =:bottomnotes, gender =:gender, price =:price, intensive =:intensive, img_url =:img_url, novinka =:novinka, status =:status WHERE id = :id LIMIT 1",compact('name', 'refan', 'kosmetic_type', 'serie', 'volume', 'descr', 'brand', 'aromagroup', 'year', 'topnotes', 'middlenotes', 'bottomnotes', 'gender', 'price', 'intensive', 'img_url', 'novinka', 'status', 'id'));
+			 	$query = query("UPDATE catalog SET name = :name, refan = :refan, kosmetic_type=:kosmetic_type, serie=:serie, stock=:stock, volume = :volume, descr = :descr, brand =:brand, aromagroup =:aromagroup, year =:year, topnotes =:topnotes, middlenotes =:middlenotes, bottomnotes =:bottomnotes, gender =:gender, price =:price, intensive =:intensive, img_url =:img_url, novinka =:novinka, status =:status WHERE id = :id LIMIT 1",compact('name', 'refan', 'kosmetic_type', 'serie', 'stock', 'volume', 'descr', 'brand', 'aromagroup', 'year', 'topnotes', 'middlenotes', 'bottomnotes', 'gender', 'price', 'intensive', 'img_url', 'novinka', 'status', 'id'));
 		 	} 
 		 	else{
-		 		$query = query("UPDATE catalog SET name = :name, refan = :refan, kosmetic_type=:kosmetic_type, serie=:serie, volume = :volume, descr = :descr, brand =:brand, aromagroup =:aromagroup, year =:year, topnotes =:topnotes, middlenotes =:middlenotes, bottomnotes =:bottomnotes, gender =:gender, price =:price, intensive =:intensive, novinka =:novinka, status =:status WHERE id = :id LIMIT 1",compact('name', 'refan', 'kosmetic_type', 'serie', 'volume', 'descr', 'brand', 'aromagroup', 'year', 'topnotes', 'middlenotes', 'bottomnotes', 'gender', 'price', 'intensive', 'novinka', 'status', 'id'));
+		 		$query = query("UPDATE catalog SET name = :name, refan = :refan, kosmetic_type=:kosmetic_type, serie=:serie, stock=:stock, volume = :volume, descr = :descr, brand =:brand, aromagroup =:aromagroup, year =:year, topnotes =:topnotes, middlenotes =:middlenotes, bottomnotes =:bottomnotes, gender =:gender, price =:price, intensive =:intensive, novinka =:novinka, status =:status WHERE id = :id LIMIT 1",compact('name', 'refan', 'kosmetic_type', 'serie', 'stock', 'volume', 'descr', 'brand', 'aromagroup', 'year', 'topnotes', 'middlenotes', 'bottomnotes', 'gender', 'price', 'intensive', 'novinka', 'status', 'id'));
 		 	}
 		 	
 		 	//print_r($_FILES['img']);

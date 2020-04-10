@@ -29,6 +29,14 @@ $zahod = query("INSERT INTO actions (action, product_id, ip) VALUES (:action, :p
 <h3>Карточка товара</h3>
 <div class="greyline1"></div>
 -->
+<style>
+	.serietovara{
+		cursor: pointer;
+	}
+	.serietovara:hover{
+		color: #edbe3c;
+	}
+</style>
 <div class="wrap5">
 	<div class="tovar-page">
 		<div class="row">
@@ -47,7 +55,7 @@ $zahod = query("INSERT INTO actions (action, product_id, ip) VALUES (:action, :p
 				<?php if($query['intensive'] == 4){ ?>
 				<div class="text-group">
 					<h4><?php echo $query['name'] ?></h4>	
-					<h5><?php echo $query['serie'] ?></h5>	
+					<h5 class="serietovara" onclick="javascript:history.go(-1)"><?php echo $query['serie'] ?></h5>	
 				</div>
 				<?php }else{ ?>	
 				<div class="text-group">
@@ -58,7 +66,7 @@ $zahod = query("INSERT INTO actions (action, product_id, ip) VALUES (:action, :p
 					<p>Пол</p>
 					<h5><?php if($query['gender']=='0'){echo "Женский";}elseif($query['gender']=='1'){echo "Мужской";}elseif($query['gender']=='2'){echo "Unisex";} ?></h5>
 				</div>
-				<?php if($query['intensive'] != 4){ ?>
+				<?php if($query['intensive'] != 4 || $query['kosmetic_type'] == 17 || $query['kosmetic_type'] == 18){ ?>
 				<div class="text-group">
 					<p>Бренд</p>
 					<h5><a href="https://parfumanalog.ru/tovar.php?refan=<?php echo $query['refan']; ?>" target="_blank">REFAN</a></h5>

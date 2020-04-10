@@ -45,8 +45,14 @@ if (isset($_POST['action'])) {
 			$zapros = '<p>Заказ парфюма</p></br><b>Имя: '.$user_name.'</b></br><b>Номер телеофна: '.$user_phone.'</b></br><b>Email: '.$user_email.'</b></br><b>Товары:</b></br>';
 
 			foreach ($_SESSION['tovars'] as $key => $value) {
-				$query = sequery("SELECT name,price FROM catalog WHERE id = $key");
-				$zapros .= '<b>'.$query['name'].'('.$value.' шт)</b></br>';
+				$query = sequery("SELECT name,price,stock,intensive FROM catalog WHERE id = $key LIMIT 1");
+				if ($query['intensive'] == 4) {
+					$zapros .= '<b>'.$query['name'].'('.$value.' шт)(Код склада:'.$query['stock'].')</b></br>';
+				}
+				else{
+					$zapros .= '<b>'.$query['name'].'('.$value.' шт)</b></br>';
+				}
+				
 				$summa_zakaza += $query['price']*$value;
 
 
@@ -130,10 +136,13 @@ if (isset($_POST['action'])) {
 				$pakomat = $_POST['pakomat'];
 			}
 			
-			$query = sequery("SELECT name,price FROM catalog WHERE id = $product_id");
+			$query = sequery("SELECT name,price,stock,intensive FROM catalog WHERE id = $product_id");
 			$message = 'Jūsu pasūtījums ir pieñemts. Tuvākajā laikā ar jums sazināsimies! Paldies par uzticību!';
 			$zapros = '<p>Заказ парфюма в один клик</p></br><b>Имя: '.$user_name.'</b></br><b>Номер телеофна: '.$user_phone.'</b></br>';
 			$zapros .= '<b>Товар: '.$query['name'].'</b></br>';
+			if ($query['intensive'] == 4) {
+				$zapros .= '<b>Код склада: '.$query['stock'].'</b></br>';
+			}
 			$zapros .= '<b>Страна: '.$country.'</b></br>';
 			$zapros .= '<b>Сумма заказа: '.$summa_zakaz.'€</b></br>';
 			$zapros .= '<b>Способ оплаты: '.$sposob_oplaty.'</b></br>';

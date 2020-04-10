@@ -223,6 +223,7 @@ $kosmetica = sequery("SELECT * FROM kosmetica");
 					  		<input type="hidden" class="product-name" value='<?php echo $v['name']; ?>'>
 					  		<input type="hidden" class="product-kosmetica" value='<?php echo $v['kosmetic_type']; ?>'>
 					  		<input type="hidden" class="product-serie" value='<?php echo $v['serie']; ?>'>
+					  		<input type="hidden" class="product-stock" value='<?php echo $v['stock']; ?>'>
 					  		<input type="hidden" class="product-refan" value='<?php echo $v['refan']; ?>'>
 					  		<input type="hidden" class="product-volume" value='<?php echo $v['volume']; ?>'>
 					  		<input type="hidden" class="product-descr" value='<?php echo  str_replace("<br />", "", $v['descr']); ?>'>
@@ -241,6 +242,7 @@ $kosmetica = sequery("SELECT * FROM kosmetica");
 					    	<?php }else{ ?>
 				    		<p class="card-title"><?php echo $v['name']; ?></p>
 					    	<p class="card-text"><?php echo $v['serie']; ?></p>
+					    	<p class="card-text">Код склада: <?php echo $v['stock']; ?></p>
 					    	<?php } ?>
 					    	<span class="badge badge-primary" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  str_replace("<br />", "", $v['descr']); ?>" style="cursor: pointer;">Описание</span>
 					    	<p class="card-text font-weight-bold"><?php echo $v['price']; ?> €</p>
@@ -335,7 +337,11 @@ $kosmetica = sequery("SELECT * FROM kosmetica");
   						</div>
   						<div class="form-group">
     						<label class="font-weight-bold">Серия товара</label>
-    						<input type="text" name="serie" class="form-control tovar-serie" placeholder="Введите refan">
+    						<input type="text" name="serie" class="form-control tovar-serie" placeholder="Введите серию">
+  						</div>
+  						<div class="form-group">
+    						<label class="font-weight-bold">Код склада</label>
+    						<input type="text" name="stock" class="form-control tovar-stock" placeholder="Введите код">
   						</div>
   						<div class="form-group">
     						<label class="font-weight-bold">Обьем</label>
@@ -475,6 +481,7 @@ $kosmetica = sequery("SELECT * FROM kosmetica");
 			$('.tovar-modal .tovar-name').val('');
 			$('.tovar-modal .tovar-refan').val('');
 			$('.tovar-modal .tovar-serie').val('');
+			$('.tovar-modal .tovar-stock').val('');
 			$('.tovar-modal .tovar-volume').val('');
 			$('.tovar-modal .tovar-descr').val('');
 			$('.tovar-modal .tovar-aromagroup').val('');
@@ -502,6 +509,7 @@ $kosmetica = sequery("SELECT * FROM kosmetica");
 			kosmetic_type = element.find('.product-kosmetica').val(),
 			serie = element.find('.product-serie').val(),
 			refan = element.find('.product-refan').val(),
+			stock = element.find('.product-stock').val(),
 			volume = element.find('.product-volume').val(),
 			descr = element.find('.product-descr').val(),
 			brand = element.find('.product-brand').val(),
@@ -520,6 +528,7 @@ $kosmetica = sequery("SELECT * FROM kosmetica");
 			$('.tovar-modal input[name="token"]').val('<?php echo $token2; ?>');
 			$('.tovar-modal .tovar-name').val(name);
 			$('.tovar-modal .tovar-serie').val(serie);
+			$('.tovar-modal .tovar-stock').val(stock);
 			$('.tovar-modal .tovar-kosmetica').val(kosmetic_type);
 			$('.tovar-modal .tovar-refan').val(refan);
 			$('.tovar-modal .tovar-volume').val(volume);
@@ -563,20 +572,20 @@ $kosmetica = sequery("SELECT * FROM kosmetica");
 	
 	$('.tovar-intensive').change(function(event) {
 		if($(".tovar-modal .tovar-intensive option:selected").val()=='4'){
-			$('.tovar-refan').closest('.form-group').hide();
 			$('.tovar-brand').closest('.form-group').hide();
 			$('.aroma-params').hide();
 
 			$('.tovar-kosmetica').closest('.form-group').show();
 			$('.tovar-serie').closest('.form-group').show();
+			$('.tovar-stock').closest('.form-group').show();
 		}
 		else{
-			$('.tovar-refan').closest('.form-group').show();
 			$('.tovar-brand').closest('.form-group').show();
 			$('.aroma-params').show();
 
 			$('.tovar-kosmetica').closest('.form-group').hide();
 			$('.tovar-serie').closest('.form-group').hide();
+			$('.tovar-stock').closest('.form-group').hide();
 		}
 
 		if ($(".tovar-intensive option:selected").val() == 0 || $(".tovar-intensive option:selected").val() == 1) {
