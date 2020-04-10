@@ -164,6 +164,7 @@ $kosmetica = sequery("SELECT * FROM kosmetica");
 			      	<a class="nav-link <?php if($category == 'soldout'){echo 'active';} ?>" href="?category=soldout">Распродано</a>
 			      	<button class="btn btn-success add-tovar mt-5" onclick="openModal('add_tovar');">Добавить товар</button>
 			      	<button class="btn btn-info add-brand mt-1">Добавить бренд</button>
+			      	<a href="kosmetica.php" class="btn btn-warning mt-1">Разделы косметики</a>
 			    </div>
 			</div>
 			<div class="col-md-9">

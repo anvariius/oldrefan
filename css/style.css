@@ -1571,6 +1571,17 @@ footer .copyright{
   display: none;
 }
 
+.razdel-parent{
+	border: 2px solid #edbe3c;
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+.razdel-parent p{
+	padding: 0 5px;
+	font-size: 15px;
+	height: 220px;
+	overflow-y: hidden;
+}
 .razdel-banner{
 	display: flex;
 	align-items: flex-end;
@@ -1579,10 +1590,9 @@ footer .copyright{
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 250px;
-	margin-bottom: 30px;
-	cursor: pointer;
+	margin-bottom: 10px;
 }
-.razdel-banner:hover h3{
+.razdel-parent:hover .razdel-banner h3{
 	color: #edbe3c;
 }
 .razdel-banner:hover .line{
@@ -1855,7 +1865,7 @@ footer .copyright{
 		margin-bottom: 20px;
 	}
 	.catalog h3{
-		font-size: 27px;
+		font-size: 24px;
 	}
 	.catalog .clientprav{
 		width: 100%;

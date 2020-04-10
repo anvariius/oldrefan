@@ -476,6 +476,13 @@ if (isset($_POST['token']) && $_POST['token'] == $token2 && isset($_POST['action
 			$answer = $_POST['answer'];
 			$query = query("UPDATE feedback SET answer=:answer WHERE id=:id",compact('answer','id'));
 			header("Location: feedback.php");
+			break;	
+		case 'edit-kosmetic':
+			$id = $_POST['id'];
+			$name = $_POST['name'];
+			$descr = $_POST['descr'];
+			$query = query("UPDATE kosmetica SET name=:name, descr=:descr WHERE id=:id",compact('name', 'descr', 'id'));
+			header("Location: kosmetica.php");
 			break;							
 		default:
 			# code...
