@@ -156,7 +156,7 @@
 	//$('body').on('contextmenu', false);
 	$('.yt-listbox__col').hide();
 	$('#yt-widget .yt-listbox .yt-listbox__input').each(function(index, el) {
-		console.log($(el));
+		//console.log($(el));
 		if ($(el).attr('value') != 'lv') {
 			$(el).closest('.yt-listbox__cell').css('display','none !important');
 		}
@@ -260,7 +260,7 @@
 		$(this).hide();
 	});
 	
-	$(document).on('click','.contacts a, .hat a',function (e) {
+	$(document).on('click','.contacts a[href="#"], .hat a[href="#"]',function (e) {
 		e.preventDefault();
 	});
 	$(document).on('click', '.brand-block button', function(event) {
@@ -324,7 +324,7 @@
 			if ($('.zakaz').find('input[type=checkbox]').prop('checked')) {
 				$.post('engine.php', {action: 'addEmail', user_email:hash_email, user_phone: hash_phone}, function(data, textStatus, xhr) {
 					
-					console.log(data);
+					//console.log(data);
 				});
 			}
 		}
@@ -337,7 +337,7 @@
     	if ($('.okno').hasClass('zakaz')) {
 			if ($('.zakaz').find('input[type=checkbox]').prop('checked')) {
 				$.post('engine.php', {action: 'addEmail', user_email:hash_email, user_phone:hash_phone}, function(data, textStatus, xhr) {
-					console.log(data);
+					//console.log(data);
 				});
 			}
 		}
@@ -377,7 +377,7 @@
 		if (iserror == false){
 			//отправляем данные
 			$.post('engine.php',{action:'zakazconsult',user_name: user_name.val(), user_phone: user_phone.val()},function(data){
-				console.log(data);
+				//console.log(data);
 				
 				$('.consult .user-name,.consult .user-phone').val('').css('border-color','#eeeeee');
 				closeModal('.consult');
@@ -405,7 +405,7 @@
 			
 			$.post('engine.php',{action:'subscribe',user_email: email.val()},function(data) {
 				//отправляем данные
-				console.log(data);
+				//console.log(data);
 				
 	  		});
 	  		
@@ -515,7 +515,7 @@
 			$(".user-phone").mask("+371  99999?999");
 
 			$('.ppaakkoo').text('3 €');
-			console.log($('.ppaakkoo').text());
+			//console.log($('.ppaakkoo').text());
 		}
 		else{
 
@@ -552,7 +552,7 @@
   	});*/
 
   	$(document).on('click', '.oform-pokupka', function(event) {
-  		console.log('работает');
+  		//console.log('работает');
   		var numoftovars = {},
   			iserror = false,
   			sposob_dostavki;
@@ -564,7 +564,7 @@
 		});	
 		if ($('.kuriyer').is(':checked')) {
 			sposob_dostavki = 'курьер';
-			console.log($('#adrs').val());
+			//console.log($('#adrs').val());
 			if ($('#adrs').val() == '') {
 				iserror = true;
 				$('#adrs').css('border','2px solid red');
@@ -603,9 +603,9 @@
 			iserror = true;
 		}
 		if (iserror == false){
-			console.log($('.kurkur').val());
-			console.log($('.pakopako').val());
-			console.log($('.bankbank').val());
+			//console.log($('.kurkur').val());
+			//console.log($('.pakopako').val());
+			//console.log($('.bankbank').val());
 			if ($('.kurkur').is(':checked')) {
 				sposob_oplaty = 'картой курьеру';
 			}
@@ -617,7 +617,7 @@
 			}
 			//отправляем данные
 			$.post('engine.php',{action:'sendzakaz',user_phone:user_phone.val(),user_name:user_name.val(),user_email: user_email.val(),sposob_oplaty:sposob_oplaty},function(data) {
-				console.log(data);
+				//console.log(data);
 				toPage('index.php?zakaz=true&email='+user_email.val()+'&phone='+user_phone.val());
 				//очищаем корзину
 				
@@ -651,7 +651,7 @@
 			$('.pakomat').text('6 €');
 		}
 
-  		console.log(product_price);
+  		//console.log(product_price);
   		$('.okno.one-click h5 span').text(product_price+10);
   		$('.sposob-dostavki input').prop('checked', false);
   		$('.kuriyer').prop('checked', true);
@@ -704,7 +704,7 @@ var hash_phone;
 
 			$.post('engine.php',{action:'buyoneclick',user_phone:user_phone.val(),user_name:user_name.val(),user_email:user_email.val(),product_id:oneclick_product_id,sposob_oplaty:sposob_oplaty,sposob_dostavki:sposob_dostavki,pakomat:pakomat,summa_zakaz:summa_zakaz,adrs: $('.adrs').val(),country:country},function(data) {
 				//отправляем данные
-				console.log(data);
+				//console.log(data);
 				
 				$('.one-click input').val('').css('border-color','#eeeeee');
 				//очищаем корзину

@@ -480,7 +480,6 @@
 				<li><a href="#" onclick="toPage('pokupka.php');">оформить покупку</a></li>
 				<li><a href="#" onclick="openModal('.consult')">консультация</a></li>
 				<li><a href="tel:+37129552156"><i class="fa fa-phone" aria-hidden="true"></i>+371 2955 2156</a></li>
-				<li><a href="tel:+37124606846"><i class="fa fa-phone" aria-hidden="true"></i>+371 2460 6846</a></li>
 				<li><a href="mailto:info@refanparfum.lv"><i class="fa fa-envelope" aria-hidden="true"></i>info@refanparfum.lv</a></li>
 				<!-- <li class="translated"><div id="ytWidget"></div><script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=ru&widgetTheme=dark&autoMode=true" type="text/javascript"></script></li> -->
 				<!-- <li class="translated">

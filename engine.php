@@ -149,7 +149,7 @@ if (isset($_POST['action'])) {
 			$zapros .= '<b>Способ доставки: '.$sposob_dostavki.'</b></br>';
 			$zapros .= '<b>Пакомат: '.$pakomat.'</b></br>';
 			$zapros .= '<b>Адрес: '.$adrs.'</b></br>';
-			echo $zapros;
+			//echo $zapros;
 
 			$to  = "<".$_POST['user_email'].">";//почта админа
 			$subject = "RefanParfum.lv"; 
@@ -279,7 +279,7 @@ if ($_POST['action'] == 'zakazconsult' || $_POST['action'] == 'sendzakaz' || $_P
 	curl_close($rCurl);
 
 
-	echo $sAnswer;
+	//echo $sAnswer;
 
 	$to  = "<info@refanparfum.lv>";//почта админа
 	$subject = "Новый клиент"; 
@@ -288,21 +288,22 @@ if ($_POST['action'] == 'zakazconsult' || $_POST['action'] == 'sendzakaz' || $_P
 	//mail($to, $subject, $zapros, $headers);
 
 
-	$token = '6775g37nuu6w9ujwe5obojou84jhdgtdr8krkpcy';
+	$token = '6qzj1f8hij9fyrf1fgtwb85bjdxkarkwdqehx3wo';
 	$email = 'info@refanparfum.lv';
 	$params = [
 		'format' => 'json',
 		'api_key' => $token,
 		'email' => $email,
 		'sender_name' => 'refanparfum',
-		'sender_email' => 'info@refanparfum.lv',
+		'sender_email' => 'anvar8ku@gmail.com',
 		'subject' => $subject,
 		'body' => $zapros,
-		'list_id' => '19981550'
+		'list_id' => '19962860'
 	];
 
 	$get_params = http_build_query($params);
 	$result = json_decode(file_get_contents('https://api.unisender.com/ru/api/sendEmail?'. $get_params));
+	echo json_encode($result);
 	
 } 
 
