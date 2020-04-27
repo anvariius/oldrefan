@@ -33,7 +33,9 @@ $query = sequery("SELECT * FROM catalog WHERE status != 0");
 		<?php }else{ ?>	
 			<category_link>https://www.refanparfum.lv/catalog.php?category=<?php if($v['gender']=='0'){echo "woman";}else{echo "man";} ?></category_link><br>
 		<?php } ?>
+		<?php if ($v['intensive'] != 4) { ?>
 		<brand>Refan</brand><br>
+		<?php } ?>
 		<delivery_omniva>3.00</delivery_omniva><br>
 		<delivery_days_latvija>2</delivery_days_latvija><br>
 	</item>
