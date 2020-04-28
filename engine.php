@@ -76,8 +76,8 @@ if (isset($_POST['action'])) {
 					$summa_zakaza += 10;
 				}
 				else{
-					if ($summa_zakaza<50) {
-						$summa_zakaza += 6;
+					if ($summa_zakaza<30) {
+						$summa_zakaza += 3;
 					}
 				}
 			}

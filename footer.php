@@ -209,8 +209,8 @@
 			$(".user-phone").mask("+371  99999?999");
 		}
 		else{
-			if (summary<50) {
-				$('.pakomat').text('6 €');
+			if (summary<30) {
+				$('.pakomat').text('3 €');
 				pkmt = true;
 			}
 			else{
@@ -224,7 +224,7 @@
 			}
 			else{
 				if (pkmt) {
-					summary += 6;
+					summary += 3;
 				}
 			}
 
@@ -463,7 +463,7 @@
   			if ($('.citycheckk select').val() == "LV") {
   				$('.okno.one-click h5 span').text(3+product_price);
   			}else{
-  				$('.okno.one-click h5 span').text(6+product_price);
+  				$('.okno.one-click h5 span').text(3+product_price);
   			}	
   		}
   		else{
@@ -526,7 +526,7 @@
 				$(".user-phone").mask("+370  99999?999");
 			}
 
-			$('.ppaakkoo').text('6 €');
+			$('.ppaakkoo').text('3 €');
 		}
 
 		if ($('.kuriyer').is(':checked')) {
@@ -648,7 +648,7 @@
 			$('.pakomat').text('3 €');
 		}
 		else{
-			$('.pakomat').text('6 €');
+			$('.pakomat').text('3 €');
 		}
 
   		//console.log(product_price);
