@@ -2,7 +2,8 @@
 include '../bt/pdo.php';
 include 'header.php';
 if (!isset($_COOKIE['sorting'])) {
-	$_COOKIE['sorting'] = 'today';
+	$sort_title = "Сегодня";
+	$sortquery = "data>(CURRENT_DATE)";
 }
 switch ($_COOKIE['sorting']) {
 		case '1':
