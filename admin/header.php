@@ -15,6 +15,7 @@ if (!isset($_COOKIE['auth']) || $_COOKIE['auth'] != 's6cWZ6xUyG') {
   	<script src="../js/popper.min.js" charset="utf-8"></script>
   	<script src="../js/bootstrap.min.js" charset="utf-8"></script>
   	<script src="../js/popper.min.js" charset="utf-8"></script>	
+  	<script src="../js/jquery.cookie.js"></script>
   	<style>
   		.card h5{
   			height: 20px;

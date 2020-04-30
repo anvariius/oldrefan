@@ -1,7 +1,59 @@
 <?php
 include '../bt/pdo.php';
 include 'header.php';
-$query = query("SELECT * FROM zakaz ORDER BY data DESC LIMIT 50");
+if (!isset($_COOKIE['sorting'])) {
+	$_COOKIE['sorting'] = 'today';
+}
+switch ($_COOKIE['sorting']) {
+		case '1':
+			$sort_title = "Сегодня";
+			$sortquery = "data>(CURRENT_DATE)";
+			break;
+		case '2':
+			$sort_title = "Вчера";
+			$sortquery = "data>(CURRENT_DATE-1) AND data<(CURRENT_DATE)";
+			break;
+		case '3':
+			$sort_title = "2 дня назад";
+			$sortquery = "data>(CURRENT_DATE-2) AND data<(CURRENT_DATE-1)";
+			break;	
+		case '4':
+			$sort_title = "3 дня назад";
+			$sortquery = "data>(CURRENT_DATE-3) AND data<(CURRENT_DATE-2)";
+			break;	
+		case '5':
+			$sort_title = "4 дня назад";
+			$sortquery = "data>(CURRENT_DATE-4) AND data<(CURRENT_DATE-3)";
+			break;
+		case '6':
+			$sort_title = "5 дней назад";
+			$sortquery = "data>(CURRENT_DATE-5) AND data<(CURRENT_DATE-4)";
+			break;	
+		case '7':
+			$sort_title = "6-10 дней назад";
+			$sortquery = "data>(CURRENT_DATE-10) AND data<(CURRENT_DATE-5)";
+			break;
+		case '8':
+			$sort_title = "11-15 дней назад";
+			$sortquery = "data>(CURRENT_DATE-15) AND data<(CURRENT_DATE-10)";
+			break;	
+		case '9':
+			$sort_title = "16-20 дней назад";
+			$sortquery = "data>(CURRENT_DATE-20) AND data<(CURRENT_DATE-15)";
+			break;
+		case '10':
+			$sort_title = "21-25 дней назад";
+			$sortquery = "data>(CURRENT_DATE-25) AND data<(CURRENT_DATE-20)";
+			break;
+		case '11':
+			$sort_title = "26-29 дней назад";
+			$sortquery = "data>(CURRENT_DATE-29) AND data<(CURRENT_DATE-25)";
+			break;							
+		default:
+			# code...
+			break;
+	}
+$query = query("SELECT * FROM zakaz WHERE ".$sortquery." AND status!=0 ORDER BY data DESC");
 ?>
 <style>
 	.jumbotron{
@@ -17,7 +69,29 @@ $query = query("SELECT * FROM zakaz ORDER BY data DESC LIMIT 50");
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
-			<h3 class="text-center">Последние заказы</h3>
+				<div class="row">
+					<div class="col-md-4">
+						<h3 class="mb-0">Заказы</h3>
+					</div>
+					<div class="col-md-4 offset-md-4">
+						<div class="dropdown sorting">
+							<button class="btn btn-outline-dark dropdown-toggle btn-block" type="button" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $sort_title ?></button>
+							<div class="dropdown-menu" aria-labelledby="dropdown2">
+								<a href="1" class="dropdown-item">Сегодня</a>
+								<a href="2" class="dropdown-item">Вчера</a>
+								<a href="3" class="dropdown-item">2 дня назад</a>
+								<a href="4" class="dropdown-item">3 дня назад</a>
+								<a href="5" class="dropdown-item">4 дня назад</a>
+								<a href="6" class="dropdown-item">5 дней назад</a>
+								<a href="7" class="dropdown-item">6-10 дней назад</a>
+								<a href="8" class="dropdown-item">11-15 дней назад</a>
+								<a href="9" class="dropdown-item">16-20 дней назад</a>
+								<a href="10" class="dropdown-item">21-25 дней назад</a>
+								<a href="11" class="dropdown-item">26-30 дней назад</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			<hr>
 			<?php foreach($query as $v){ ?>
 			<div class="jumbotron jumbotron-fluid">
@@ -31,6 +105,13 @@ $query = query("SELECT * FROM zakaz ORDER BY data DESC LIMIT 50");
 		</div>
 	</div>
 </div>
+<script>
+	$('.sorting a').click(function (e) {
+		e.preventDefault();
+		$.cookie('sorting',$(this).attr('href'));
+		location.reload();
+	});
+</script>
 <?php
 include 'footer.php';
 ?>
