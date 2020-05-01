@@ -409,6 +409,7 @@
 				
 	  		});
 	  		
+	  		fbq('track', 'Subscribe');
 	  		email.val('').css('border','none');
 			$('#subs-alert').fadeIn('slow');
       		timer=setTimeout(function() { $('#subs-alert').fadeOut('slow'); }, 5000);
@@ -429,6 +430,8 @@
   			$.post('engine.php', {action: 'addtobasket', product_id: product_id}, function(data) {
 				var numofbasket = parseInt($('.numofbasket').text());
 				$('.numofbasket').text(data);
+
+				fbq('track', 'AddToCart');
 				scrollTo('header');
 	  		});
   		}
@@ -585,6 +588,7 @@
 		numoftovars = JSON.stringify(numoftovars);
   		if (iserror == false) {
   			$.post('engine.php', {action: 'setbasket', tovars: numoftovars}, function(data, textStatus, xhr) {
+  				fbq('track', 'InitiateCheckout');
 	  			toPage('pokupka.php');
 	  		});
 	  		
@@ -618,6 +622,7 @@
 			//отправляем данные
 			$.post('engine.php',{action:'sendzakaz',user_phone:user_phone.val(),user_name:user_name.val(),user_email: user_email.val(),sposob_oplaty:sposob_oplaty},function(data) {
 				//console.log(data);
+				fbq('track', 'Purchase', {value: data, currency: 'USD'});
 				toPage('index.php?zakaz=true&email='+user_email.val()+'&phone='+user_phone.val());
 				//очищаем корзину
 				
@@ -658,6 +663,8 @@
   		$('.freeship').trigger('click');
   		$('.pakomatinho input').trigger('click');
   		openModal('.one-click');
+
+  		fbq('track', 'InitiateCheckout');
   	});
 var hash_email;
 var hash_phone;
@@ -715,7 +722,7 @@ var hash_phone;
   			hash_phone = user_phone.val();
 			openModal('.zakaz');
 			
-			
+			fbq('track', 'Purchase', {value: summa_zakaz, currency: 'EUR'});
 		}
   	});
 

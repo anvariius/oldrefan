@@ -89,7 +89,7 @@ if (isset($_POST['action'])) {
 			$zapros .= '<b>Пакомат: '.$pakomat.'</b></br>';
 			$_SESSION['basket'] = array();
 			$_SESSION['tovars'] = array();
-			echo $zapros;
+			
 
 			$to  = "<".$_POST['user_email'].">";//почта админа
 			$subject = "RefanParfum.lv"; 
@@ -98,7 +98,7 @@ if (isset($_POST['action'])) {
 			$msgg = '<b>Спасибо за заявку! Ваш заказ был принят! Наш консультант вскоре свяжется с вами!</b>';
 			$pokupka = query("INSERT INTO zakaz (zakaz) VALUES (:zapros)", compact('zapros'));
 			mail($to, $subject, $msgg, $headers);
-			echo $to;
+			echo $summa_zakaza;
 
 			break;
 		case 'addEmail':
@@ -189,17 +189,17 @@ if (isset($_POST['action'])) {
 			$headers .= "From: От кого письмо <zakaz@mail.ru>\r\n";  
 			//mail($to, $subject, $zapros, $headers);
 
-			$token = '6775g37nuu6w9ujwe5obojou84jhdgtdr8krkpcy';
+			$token = '6qzj1f8hij9fyrf1fgtwb85bjdxkarkwdqehx3wo';
 			$email = 'info@refanparfum.lv';
 			$params = [
 				'format' => 'json',
 				'api_key' => $token,
 				'email' => $email,
 				'sender_name' => 'refanparfum',
-				'sender_email' => 'info@refanparfum.lv',
+				'sender_email' => 'anvar8ku@gmail.com',
 				'subject' => $subject,
 				'body' => $zapros,
-				'list_id' => '19981550'
+				'list_id' => '19962860'
 			];
 
 			$get_params = http_build_query($params);
