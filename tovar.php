@@ -70,7 +70,7 @@ $zahod = query("INSERT INTO actions (action, product_id, ip) VALUES (:action, :p
 				<div class="text-group">
 					<p>Бренд</p>
 					<!-- https://parfumanalog.ru/tovar.php?refan=<?php echo $query['refan']; ?> -->
-					<h5><a href="#" target="_blank">REFAN</a></h5>
+					<h5><a target="_blank">REFAN</a></h5>
 				</div>	
 				<?php } ?>
 				<?php if($volume != ''){ ?>

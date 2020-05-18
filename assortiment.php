@@ -137,8 +137,8 @@ elseif (!isset($query[0]['id'])) {
 	<?php if ($query) {
 		foreach ($query as $v) { ?>
 	<div class="col-md-2 col-sm-6">
-		<!-- onclick="location.href='http://parfumanalog.ru/tovar.php?refan=<?php echo $v['refan'] ?>'" -->
-		<div class="prod-card">
+		
+		<div class="prod-card" onclick="location.href='tovar.php?refan=<?php echo $v['refan'] ?>'">
 			<div class="img-block" style="background-image: url(assort/<?php echo $v['img_url']; ?>);">
 				<div class="prod-num">
 					<span>Ячейка</span>
