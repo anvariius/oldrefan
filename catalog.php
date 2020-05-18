@@ -214,7 +214,7 @@
 			<?php if ($category!='kosmetica'){ ?>
 			<h4 class="product-name">REFAN <span><?php echo $v['refan']; ?></span></h4>
 			<h5 class="product-gender"><?php echo getGender($v['gender']); ?> <?php if($v['volume'] !='') echo $v['volume']."ML"; ?></h5>
-			<p class="product-descr">www.parfumanalog.ru</p>
+			<!--<p class="product-descr">www.parfumanalog.ru</p>-->
 			<?php }else{ ?>
 			<h4 class="product-name1"><?php echo $v['name']; ?></h4>
 			<h5 class="product-gender1"><?php echo $v['serie']; ?></h5>

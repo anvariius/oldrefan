@@ -1,60 +1,61 @@
 <?php
 include '../bt/pdo.php';
 include 'header.php';
+
 if (!isset($_COOKIE['sorting'])) {
 	$sort_title = "Сегодня";
-	$sortquery = "data>(CURRENT_DATE)";
+	$sortquery = "DATE(data) = DATE(NOW())";
 }
 switch ($_COOKIE['sorting']) {
 		case '1':
 			$sort_title = "Сегодня";
-			$sortquery = "data>(CURRENT_DATE)";
+			$sortquery = "DATE(data) = DATE(NOW())";
 			break;
 		case '2':
 			$sort_title = "Вчера";
-			$sortquery = "data>(CURRENT_DATE-1) AND data<(CURRENT_DATE)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 1 DAY) AND data<(CURRENT_DATE)";
 			break;
 		case '3':
 			$sort_title = "2 дня назад";
-			$sortquery = "data>(CURRENT_DATE-2) AND data<(CURRENT_DATE-1)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 2 DAY) AND data<(CURRENT_DATE - INTERVAL 1 DAY)";
 			break;	
 		case '4':
 			$sort_title = "3 дня назад";
-			$sortquery = "data>(CURRENT_DATE-3) AND data<(CURRENT_DATE-2)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 3 DAY) AND data<(CURRENT_DATE - INTERVAL 2 DAY)";
 			break;	
 		case '5':
 			$sort_title = "4 дня назад";
-			$sortquery = "data>(CURRENT_DATE-4) AND data<(CURRENT_DATE-3)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 4 DAY) AND data<(CURRENT_DATE - INTERVAL 3 DAY)";
 			break;
 		case '6':
 			$sort_title = "5 дней назад";
-			$sortquery = "data>(CURRENT_DATE-5) AND data<(CURRENT_DATE-4)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 5 DAY) AND data<(CURRENT_DATE - INTERVAL 4 DAY)";
 			break;	
 		case '7':
 			$sort_title = "6-10 дней назад";
-			$sortquery = "data>(CURRENT_DATE-10) AND data<(CURRENT_DATE-5)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 10 DAY) AND data<(CURRENT_DATE - INTERVAL 5 DAY)";
 			break;
 		case '8':
 			$sort_title = "11-15 дней назад";
-			$sortquery = "data>(CURRENT_DATE-15) AND data<(CURRENT_DATE-10)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 15 DAY) AND data<(CURRENT_DATE - INTERVAL 10 DAY)";
 			break;	
 		case '9':
 			$sort_title = "16-20 дней назад";
-			$sortquery = "data>(CURRENT_DATE-20) AND data<(CURRENT_DATE-15)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 20 DAY) AND data<(CURRENT_DATE - INTERVAL 15 DAY)";
 			break;
 		case '10':
 			$sort_title = "21-25 дней назад";
-			$sortquery = "data>(CURRENT_DATE-25) AND data<(CURRENT_DATE-20)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 25 DAY) AND data<(CURRENT_DATE - INTERVAL 20 DAY)";
 			break;
 		case '11':
 			$sort_title = "26-29 дней назад";
-			$sortquery = "data>(CURRENT_DATE-29) AND data<(CURRENT_DATE-25)";
+			$sortquery = "data>(CURRENT_DATE - INTERVAL 29 DAY) AND data<(CURRENT_DATE - INTERVAL 25 DAY)";
 			break;							
 		default:
 			# code...
 			break;
 	}
-$query = query("SELECT * FROM zakaz WHERE ".$sortquery." AND status!=0 ORDER BY data DESC");
+$query = sequery("SELECT * FROM zakaz WHERE ".$sortquery." AND status!=0 ORDER BY data DESC");
 ?>
 <style>
 	.jumbotron{

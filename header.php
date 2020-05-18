@@ -47,7 +47,7 @@
   	<script src="js/jquery.cookie.js"></script>
 	<script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
 	<script src="js/google-translate.js"></script>
-
+	
 	<!-- Global site tag (gtag.js) - Google Ads: 706639266 -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-706639266"></script>
 	<script>
@@ -233,9 +233,11 @@
 
 
 </head>
-<body> <!--    -->
+<body>
+<!--old tawk.to chat script--> 
+<!--    -->
 	<!--Start of Tawk.to Script--> 
-	<script type="text/javascript"> 
+	<!-- <script type="text/javascript"> 
 	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); 
 	(function(){ 
 	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; 
@@ -246,8 +248,19 @@
 	s0.parentNode.insertBefore(s1,s0); 
 	})(); 
 	</script> 
-	 
+	 -->
 	<!--End of Tawk.to Script-->
+	<!--new chat script-->
+	<!-- Start of LiveChat (www.livechatinc.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 11934417;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechatinc.com/chat-with/11934417/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+
+	<!--end of new chat script-->
 	<div class="alert alert-danger alert-dismissible" id="subs-alert" role="alert" style="margin-top: 587px;">
 	    <strong>Ваша подписка оформлена!</strong>
 	    <button type="button" class="close">
@@ -488,7 +501,7 @@
 		<ul>
 			<li class="sidebar-title"><a href="">Контакты</a><span class="close-sidebar" aria-hidden="true">×</span></li>
 			<li><h4>Название фирмы</h4><a href="">SIA "ELPARKS"</a></li>
-			<li><h4>ТЕЛЕФОН</h4><a href="tel:+37129552156">+371 2955 2156</a><br><a href="tel:+37124606846">+371 2460 6846</a></li>
+			<li><h4>ТЕЛЕФОН</h4><a href="tel:+37129552156">+371 2955 2156</a></li>
 			<li><h4>Эл.почта</h4><a href="mailto:info@refanparfum.lv">info@refanparfum.lv</a></li>
 			<li><h4>ВРЕМЯ РАБОТЫ</h4><a href="">С пОНЕДЕЛЬНИКА по пЯТНИЦУ<br>с 9:00 до 19:00<br>*Заявки на сайте принимаются круглосуточно</a></li>
 			<button class="zakaz-consult" onclick="openModal('.consult')">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
@@ -585,7 +598,7 @@
 		</ul>
 	</nav>
 	<section class="sale-line">
-		<h3><span>специальное предложение!</span> бесплатная доставка в пакоматы omniva при заказе от 30€ по Латвии! <span>От 50€ по Литве и Эстонии!</span> Доставка по странам Балтии в течении 2х-3х рабочих дней!<br><a href="https://parfumanalog.ru" target="blank">www.parfumanalog.ru</a></h3>
+		<h3><span>специальное предложение!</span> бесплатная доставка в пакоматы omniva при заказе <span> от 30€ по Латвии, Литве и Эстонии!!!</span> Доставка по странам Балтии в течении 2х-3х рабочих дней!<!--<br><a href="https://parfumanalog.ru" target="blank">www.parfumanalog.ru</a>--></h3>
 	</section>
 	<main>
 		<div class="container">

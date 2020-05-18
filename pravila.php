@@ -47,9 +47,7 @@
 					<li>5.1. Lietotājs izvēloties piegādes pakalpojumu, apņemas noradīt pakomata piegādes adresi.</li>
 					<li>5.1.1 preces var piegādāt ELPARKS vai viņa pilnvarots pārstāvis;</li>
 					<li>5.1.2  Lietotājs apņemas pieņemt preces no kurjera;</li>
-					<li>5.1.3. piegādes maksa Latvijā – 3,00 (tris eiro un 0 eiro centu) EUR. Ja Lietotāja pasūtījuma summa ir vairāk par 30  (trīsdesmit eiro un 0 eiro centu) EUR  piegāde ir bezmaksas.
-					piegādes maksa Lietuva – 6,00 (seši eiro un 0 eiro centu) EUR. Ja Lietotāja pasūtījuma summa ir vairāk par 50  (piecdesmit eiro un 0 eiro centu) EUR  piegāde ir bezmaksas.
-					piegādes maksa Igaunija – 6,00 (seši eiro un 0 eiro centu) EUR. Ja Lietotāja pasūtījuma summa ir vairāk par 50  (piecdesmit eiro un 0 eiro centu) EUR  piegāde ir bezmaksas.</li>
+					<li>5.1.3. piegādes maksa Latvijā, Lietuvā un Igaunijā – 3,00 (tris eiro un 0 eiro centu) EUR. Ja Lietotāja pasūtījuma summa ir vairāk par 30  (trīsdesmit eiro un 0 eiro centu) EUR  piegāde ir bezmaksas.</li>
 					<li>5.1.4. ELPARKS patur tiesības mainīt pasūtījuma summu, par kuru piegāde ir bezmaksas.</li>
 					<li>5.2. ELPARKS darīs visu iespējamo, lai nodrošinātu to, ka pasūtītās preces tiktu piegādātas pēc iespējas ātrāk. Aptuvenais piegādes laiks 1-2 (viena līdz divas) darba dienas.</li>
 					<li>5.3. Ja Lietotāja norādītajā piegādes adresē Lietotājs nav atrodams, ELPARKS ir tiesības preces nodot jebkurai citai norādītajā adresē esošajai pilngadīgajai personai, bet Lietotājam nav tiesību izteikt ELPARKS jebkādas pretenzijas par preču piegādi neatbilstošai personai.</li>

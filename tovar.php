@@ -69,7 +69,8 @@ $zahod = query("INSERT INTO actions (action, product_id, ip) VALUES (:action, :p
 				<?php if($query['intensive'] != 4 || $query['kosmetic_type'] == 17 || $query['kosmetic_type'] == 18){ ?>
 				<div class="text-group">
 					<p>Бренд</p>
-					<h5><a href="https://parfumanalog.ru/tovar.php?refan=<?php echo $query['refan']; ?>" target="_blank">REFAN</a></h5>
+					<!-- https://parfumanalog.ru/tovar.php?refan=<?php echo $query['refan']; ?> -->
+					<h5><a href="#" target="_blank">REFAN</a></h5>
 				</div>	
 				<?php } ?>
 				<?php if($volume != ''){ ?>

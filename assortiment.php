@@ -129,7 +129,7 @@ elseif (!isset($query[0]['id'])) {
 	<div class="col-md-8 flex align-items-center justify-content-center">
 		<div>
 			<h4>Торговые автоматы находится на странице</h4>
-			<a href="automat.php">refanfarfum.lv/automat.php</a>
+			<a href="automat.php">refanparfum.lv/automat.php</a>
 		</div>
 	</div>
 </div>
@@ -137,7 +137,8 @@ elseif (!isset($query[0]['id'])) {
 	<?php if ($query) {
 		foreach ($query as $v) { ?>
 	<div class="col-md-2 col-sm-6">
-		<div class="prod-card" onclick="location.href='http://parfumanalog.ru/tovar.php?refan=<?php echo $v['refan'] ?>'">
+		<!-- onclick="location.href='http://parfumanalog.ru/tovar.php?refan=<?php echo $v['refan'] ?>'" -->
+		<div class="prod-card">
 			<div class="img-block" style="background-image: url(assort/<?php echo $v['img_url']; ?>);">
 				<div class="prod-num">
 					<span>Ячейка</span>
