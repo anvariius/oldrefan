@@ -198,7 +198,7 @@
 		<a class="col-md-4 product-block product-card" product_id="<?php echo $v['id']; ?>" refan="<?php echo $v['refan']; ?>" category="<?php echo $v['gender']; ?>">
 			<div class="product-img" style="background-image: url(catalog/<?php echo $v['img_url']; ?>);">
 				<div class="top-block">
-					<?php if ($category!='kosmetica'){ ?>
+					<?php if ($category!='kosmetica' && $category!='accs'){ ?>
 					<img src="img/intensive.png" class="intensive" alt="" data-toggle="tooltip" data-placement="bottom" data-original-title="Парфюмерная вода. Очень высокая стойкость аромата. Приятный шлейф. Более высокая концетрация ароматических масел в отличии от EDT">
 					<?php } ?>
 					<?php if ($v['status'] == 2) { ?>
@@ -211,7 +211,7 @@
 				</div>
 				<?php } ?>
 			</div>
-			<?php if ($category!='kosmetica'){ ?>
+			<?php if ($category!='kosmetica' && $category!='accs'){ ?>
 			<h4 class="product-name">REFAN <span><?php echo $v['refan']; ?></span></h4>
 			<h5 class="product-gender"><?php echo getGender($v['gender']); ?> <?php if($v['volume'] !='') echo $v['volume']."ML"; ?></h5>
 			<!--<p class="product-descr">www.parfumanalog.ru</p>-->

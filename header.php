@@ -136,7 +136,8 @@
 
 		}
 	</style>
-	<!-- Yandex.Metrika counter -->
+
+	<!-- Yandex.Metrika counter old counter -->
 	<script type="text/javascript" >
 	   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 	   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -480,7 +481,7 @@
 				<li><a href="index.php">Главная</a></li>
 				<li><a href="catalog.php?category=woman">Женщинам</a></li>
 				<li><a href="catalog.php?category=man">Мужчинам</a></li>
-				<li><a href="catalog.php">Аксессуары</a></li>
+				<li><a href="catalog.php?category=accs">Дезинфекция и Аксессуары</a></li>
 				<li><a href="catalog.php?category=brands">Бренды</a></li>
 				<li><a href="automat.php">ТОРГОВЫЕ АВТОМАТЫ</a></li>
 				<li><a href="feedback.php">Отзывы</a></li>
@@ -589,11 +590,11 @@
 			<li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Главная</a></li>
 			<li><a href="catalog.php?category=woman">Женщинам</a></li>
 			<li><a href="catalog.php?category=man">Мужчинам</a></li>
-			<li><a href="catalog.php?category=accs">Аксессуары</a></li>
+			<li><a href="catalog.php?category=accs" class="podsvetka">Дезинфекция и Аксессуары</a></li>
 			<li><a href="catalog.php?category=brands">Бренды</a></li>
 			<li><a href="automat.php">ТОРГОВЫЕ АВТОМАТЫ</a></li>
 			<li><a href="feedback.php">Отзывы</a></li>
-			<li><a href="catalog.php?category=nabor" class="podsvetka">Парфюмерные наборы</a></li>
+			<li><a href="catalog.php?category=nabor">Парфюмерные наборы</a></li>
 			<li><a href="kosmetica.php">Косметика</a></li>
 		</ul>
 	</nav>

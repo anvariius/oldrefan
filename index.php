@@ -39,7 +39,7 @@ $brands_count = $brands_count['COUNT(1)'];
 							<div class="col-md-3 col-sm-6 product-card" product_id="<?php echo $v['id']; ?>" refan="<?php echo $v['refan']; ?>" category="<?php echo $v['gender']; ?>">
 								<div class="product-img" style="background-image: url(catalog/<?php echo $v['img_url']; ?>);">
 									<div class="top-block">
-										<?php if ($v['intensive']!='4'){ ?>
+										<?php if ($v['intensive']!='4' && $v['intensive']!='2'){ ?>
 										<img src="img/intensive.png" class="intensive" alt="" data-toggle="tooltip" data-placement="bottom" data-original-title="Парфюмерная вода. Очень высокая стойкость аромата. Приятный шлейф. Более высокая концетрация ароматических масел в отличии от EDT">
 										<?php } ?>
 										<?php if ($v['status'] == 2) { ?>
@@ -52,10 +52,10 @@ $brands_count = $brands_count['COUNT(1)'];
 									</div>
 									<?php } ?>
 								</div>
-								<?php if ($v['intensive']!='4'){ ?>
+								<?php if ($v['intensive']!='4' && $v['intensive']!='2'){ ?>
 								<h4 class="product-name">REFAN <span><?php echo $v['refan']; ?></span></h4>
 								<h5 class="product-gender"><?php echo getGender($v['gender']); ?> <?php if($v['volume'] !='') echo $v['volume']."ML"; ?></h5>
-								<p class="product-descr" style="height: 37px;">www.parfumanalog.ru</p>
+								<!--<p class="product-descr" style="height: 37px;">www.parfumanalog.ru</p>-->
 								<?php }else{ ?>
 								<h4 class="product-name1"><?php echo $v['name']; ?></h4>
 								<h5 class="product-gender1"><?php echo $v['serie']; ?></h5>
@@ -85,7 +85,7 @@ $brands_count = $brands_count['COUNT(1)'];
 								</div>
 								<h4 class="product-name">REFAN <span><?php echo $v['refan']; ?></span></h4>
 								<h5 class="product-gender"><?php echo getGender($v['gender']); ?> <?php if($v['volume'] !='') echo $v['volume']."ML"; ?></h5>
-								<p class="product-descr">www.parfumanalog.ru</p>
+								<!--<p class="product-descr">www.parfumanalog.ru</p>-->
 								<p class="product-price">€<?php echo $v['price']; ?></p>
 								<button class="product-opisanie" data-toggle="tooltip" data-placement="top" data-original-title='<?php echo str_replace("<br />", "", $v['descr']); ?>'>Описание товара</button>
 								<button class="add-product">ДОБАВИТЬ В КОРЗИНУ</button>
@@ -111,7 +111,7 @@ $brands_count = $brands_count['COUNT(1)'];
 								</div>
 								<h4 class="product-name">REFAN <span><?php echo $v['refan']; ?></span></h4>
 								<h5 class="product-gender"><?php echo getGender($v['gender']); ?> <?php if($v['volume'] !='') echo $v['volume']."ML"; ?></h5>
-								<p class="product-descr">www.parfumanalog.ru</p>
+								<!--<p class="product-descr">www.parfumanalog.ru</p>-->
 								<p class="product-price">€<?php echo $v['price']; ?></p>
 								<button class="product-opisanie" data-toggle="tooltip" data-placement="top" data-original-title='<?php echo str_replace("<br />", "", $v['descr']); ?>'>Описание товара</button>
 								<button class="add-product">ДОБАВИТЬ В КОРЗИНУ</button>
@@ -137,7 +137,7 @@ $brands_count = $brands_count['COUNT(1)'];
 								</div>
 								<h4 class="product-name">REFAN <span><?php echo $v['refan']; ?></span></h4>
 								<h5 class="product-gender"><?php echo getGender($v['gender']); ?> <?php if($v['volume'] !='') echo $v['volume']."ML"; ?></h5>
-								<p class="product-descr">www.parfumanalog.ru</p>
+								<!--<p class="product-descr">www.parfumanalog.ru</p>-->
 								<p class="product-price">€<?php echo $v['price']; ?></p>
 								<button class="product-opisanie" data-toggle="tooltip" data-placement="top" data-original-title='<?php echo str_replace("<br />", "", $v['descr']); ?>'>Описание товара</button>
 								<button class="add-product">ДОБАВИТЬ В КОРЗИНУ</button>
