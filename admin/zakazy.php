@@ -56,6 +56,12 @@ switch ($_COOKIE['sorting']) {
 			break;
 	}
 $query = sequery("SELECT * FROM zakaz WHERE ".$sortquery." AND status!=0 ORDER BY data DESC");
+if (count($query) == 0) {
+	$query = false;
+}
+elseif (!isset($query[0]['id'])) {
+	$query = array('1' => $query);
+}
 ?>
 <style>
 	.jumbotron{
