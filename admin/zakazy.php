@@ -4,7 +4,7 @@ include 'header.php';
 
 if (!isset($_COOKIE['sorting'])) {
 	$sort_title = "Сегодня";
-	$sortquery = "DATE(data) = DATE(NOW())";
+	$sortquery = "DATE(data) = DATE(CURRENT_DATE)";
 }
 switch ($_COOKIE['sorting']) {
 		case '1':
