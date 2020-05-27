@@ -187,7 +187,7 @@
 		});
 
 		if (countrr == "LV") {
-			if (summary<50) {
+			if (summary<30) {
 				$('.pakomat').text('3 €');
 				pkmt = true;
 			}
@@ -195,7 +195,7 @@
 				$('.pakomat').text('бесплатно');
 			}
 
-			summa_dostavki = 5;
+			summa_dostavki = 10;
 
 			if ($('.kuriyer').is(':checked')) {
 				summary += summa_dostavki;
@@ -209,7 +209,7 @@
 			$(".user-phone").mask("+371  99999?999");
 		}
 		else{
-			if (summary<50) {
+			if (summary<30) {
 				$('.pakomat').text('3 €');
 				pkmt = true;
 			}
@@ -217,7 +217,7 @@
 				$('.pakomat').text('бесплатно');
 			}
 
-			summa_dostavki = 5;
+			summa_dostavki = 10;
 
 			if ($('.kuriyer').is(':checked')) {
 				summary += summa_dostavki;
@@ -474,7 +474,7 @@
   			$('.adrr').show();
   			$('.pakomatinho').hide();
   			$('.kuriyerinho').show();
-  			$('.okno.one-click h5 span').text(5+product_price);
+  			$('.okno.one-click h5 span').text(10+product_price);
   		}
   		$('.sposob-oplaty input').prop('checked', false);
   		$('.bankshit').prop('checked', true);
@@ -646,7 +646,6 @@
   		product_price = parseInt(product_price);
   		oneclick_product_id = $(this).closest('.product-card').attr('product_id');
 
-
   		if ($(this).hasClass('buy-oneclickk')) {
   			product_price = $(this).closest('.text-group').find('.hidden-price').val();
   			product_price = parseInt(product_price);
@@ -661,7 +660,7 @@
 		}
 
   		//console.log(product_price);
-  		$('.okno.one-click h5 span').text(product_price+5);
+  		$('.okno.one-click h5 span').text(product_price+10);
   		$('.sposob-dostavki input').prop('checked', false);
   		$('.kuriyer').prop('checked', true);
   		$('.freeship').trigger('click');
