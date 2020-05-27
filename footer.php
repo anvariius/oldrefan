@@ -639,9 +639,13 @@
   	var product_price;
 
   	$('.buy-oneclick, .buy-oneclickk').click(function(event) {
+  		if($(this).closest('.product-block','.product-card').is('.rasprodano')){
+  			return '';
+  		}
   		product_price = $(this).closest('.product-card').find('.product-price').text().slice(1);
   		product_price = parseInt(product_price);
   		oneclick_product_id = $(this).closest('.product-card').attr('product_id');
+
 
   		if ($(this).hasClass('buy-oneclickk')) {
   			product_price = $(this).closest('.text-group').find('.hidden-price').val();
