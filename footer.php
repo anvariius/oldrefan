@@ -639,7 +639,7 @@
   	var product_price;
 
   	$('.buy-oneclick, .buy-oneclickk').click(function(event) {
-  		if($(this).closest('.product-block','.product-card').is('.rasprodano')){
+  		if($(this).closest('.product-block').find('.rasprodano').length>0){
   			return '';
   		}
   		product_price = $(this).closest('.product-card').find('.product-price').text().slice(1);
