@@ -194,8 +194,11 @@
 			else{
 				$('.pakomat').text('бесплатно');
 			}
-
 			summa_dostavki = 5;
+
+			if(summary>=50){
+				summa_dostavki = 0;
+			}
 
 			if ($('.kuriyer').is(':checked')) {
 				summary += summa_dostavki;
@@ -205,6 +208,8 @@
 					summary += 3;
 				}
 			}
+
+			if (summary>50) {}
 
 			$(".user-phone").mask("+371  99999?999");
 		}
@@ -218,6 +223,9 @@
 			}
 
 			summa_dostavki = 5;
+			if(summary>=50){
+				summa_dostavki = 0;
+			}
 
 			if ($('.kuriyer').is(':checked')) {
 				summary += summa_dostavki;
@@ -235,9 +243,15 @@
 				$(".user-phone").mask("+370  99999?999");
 			}
 		}
-		$('.summa-dostavki').text(summa_dostavki);
+		if(summa_dostavki != 0){
+			$('.summa-dostavki').text(summa_dostavki+" €");
+		}else{
+			$('.summa-dostavki').text("Бесплатно");
+		}
+		
 		$('.itogo-current').text(summary);
 		$('.itogo-total').text(summary);
+
 
 
 	}

@@ -63,7 +63,9 @@ if (isset($_POST['action'])) {
 			}
 			if ($country == "LV") {
 				if ($sposob_dostavki == 'курьер') {
-					$summa_zakaza += 5;
+					if ($summa_zakaza<50) {
+						$summa_zakaza += 5;
+					}
 				}
 				else{
 					if ($summa_zakaza<30) {
@@ -73,7 +75,10 @@ if (isset($_POST['action'])) {
 			}
 			else{
 				if ($sposob_dostavki == 'курьер') {
-					$summa_zakaza += 5;
+					if ($summa_zakaza<50) {
+						$summa_zakaza += 5;
+					}
+					
 				}
 				else{
 					if ($summa_zakaza<30) {

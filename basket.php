@@ -95,7 +95,7 @@ $tovar = sequery("SELECT * FROM catalog WHERE id = 58 AND status = 1 AND intensi
 				<div class="form-check">
 	        		<input class="form-check-input kuriyer" type="checkbox" id="gridCheck1">
 	        		<label class="form-check-label" for="gridCheck1">
-	          			Курьерская доставка - <b class="summa-dostavki">10</b> € 
+	          			Курьерская доставка - <b class="summa-dostavki">10 €</b>
 	        		</label>
 	      		</div>
 	      		<div class="form-check">
